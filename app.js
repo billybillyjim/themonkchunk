@@ -225,6 +225,7 @@ let vm = Vue.createApp({
 				[6753, "Mime"],
 				[6750, "Mysterious Old Man"]
 			]);
+			const prisonPeteId = 6754;
 			const npcInfoRecord = event?.npcInfoRecord;
 
 			if (!npcInfoRecord) {
@@ -233,7 +234,16 @@ let vm = Vue.createApp({
 
 			const npcName = npcInfoRecord.npcName;
 			const normalizedNpcName = mysteriousOldManNamesByNpcId.get(Number(npcInfoRecord.npcId));
-
+			if(npcName == "Evil Bob" && npcInfoRecord.npcId == prisonPeteId){
+				return {
+					...event,
+					npcInfoRecord: {
+						...npcInfoRecord,
+						originalNpcName: npcName,
+						npcName: "Prison Pete"
+					}
+				};
+			}
 			if (npcName == "Mysterious Old Man" && normalizedNpcName) {
 				return {
 					...event,
