@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
 	<meta charset="utf-8">
@@ -174,7 +174,11 @@
 		}
 
 		.is-dry-row>* {
-			background-color: var(--bs-warning-bg-subtle) !important;
+			background-color: var(--bs-info-bg-subtle) !important;
+		}
+
+		@include color-mode(dark) {
+
 		}
 	</style>
 </head>
@@ -224,7 +228,7 @@
 						</div>
 
 						<div class="card-body p-3 p-lg-4">
-							<div class="map-stage border rounded-3 shadow-sm" ref="mapStage" @mousemove="updateCursorTile" @mouseleave="cursorTile = null" role="img"
+							<div class="map-stage border rounded-1 shadow-sm" ref="mapStage" @mousemove="updateCursorTile" @mouseleave="cursorTile = null" role="img"
 								aria-label="OSRS Monastery chunk map with numbered random event markers">
 								<img class="chunk-map" src="MonasteryChunk.png" alt="OSRS Monastery chunk map" width="192" height="192" draggable="false">
 
@@ -251,8 +255,8 @@
 
 							<dl class="row g-3 mb-0">
 								<div class="col-12">
-									<div class="border rounded-3 p-3 bg-body-tertiary">
-										<dt class="small text-uppercase text-body-secondary">Player coordinate</dt>
+									<div class="border rounded-1 p-3 bg-body-tertiary">
+										<dt class="small text-uppercase text-body-secondary">Coordinate</dt>
 										<dd class="fs-5 fw-semibold mb-0">
 											[[ selectedEvent.playerInfoRecord.worldX ]], [[ selectedEvent.playerInfoRecord.worldY ]]
 										</dd>
@@ -260,28 +264,14 @@
 								</div>
 
 								<div class="col-sm-6 col-xl-12">
-									<div class="border rounded-3 p-3 h-100">
+									<div class="border rounded-1 p-3 h-100">
 										<dt class="small text-uppercase text-body-secondary">Since last random</dt>
 										<dd class="fw-semibold mb-0">[[ formatDuration(selectedEvent.secondsSinceLastRandomEvent) ]]</dd>
 									</div>
 								</div>
 
 								<div class="col-sm-6 col-xl-12">
-									<div class="border rounded-3 p-3 h-100">
-										<dt class="small text-uppercase text-body-secondary">Intervals since last</dt>
-										<dd class="fw-semibold mb-0">[[ selectedEvent.intervalsSinceLastRandom ]]</dd>
-									</div>
-								</div>
-
-								<div class="col-sm-6 col-xl-12">
-									<div class="border rounded-3 p-3 h-100">
-										<dt class="small text-uppercase text-body-secondary">Ticks since last</dt>
-										<dd class="fw-semibold mb-0">[[ selectedEvent.ticksSinceLastRandomEvent.toLocaleString() ]]</dd>
-									</div>
-								</div>
-
-								<div class="col-sm-6 col-xl-12">
-									<div class="border rounded-3 p-3 h-100">
+									<div class="border rounded-1 p-3 h-100">
 										<dt class="small text-uppercase text-body-secondary">Overall XP</dt>
 										<dd class="fw-semibold mb-0">[[ selectedEvent.xpInfoRecord.overallExperience.toLocaleString() ]]</dd>
 									</div>
@@ -358,7 +348,7 @@
 						<div>
 							<h2 class="h4 mb-1">Dry streaks by event</h2>
 							<p class="text-body-secondary mb-0">
-								Dry means at least [[ chanceDenominator ]] recorded random events have occurred since that NPC last appeared.
+								"Dry" means at least [[ chanceDenominator ]] recorded random events have occurred since that NPC last appeared.
 							</p>
 						</div>
 					</div>
@@ -367,7 +357,7 @@
 				<div class="card-body p-3 p-lg-4">
 					<div class="table-responsive">
 						<table class="analytics-table table table-hover table-striped align-middle mb-0">
-							<thead class="table-light">
+							<thead class="table-dark">
 								<tr>
 									<th scope="col">
 										<button type="button" class="analytics-sort-button" @click="sortAnalytics('name')">
@@ -457,7 +447,7 @@
 	</main>
 
 	<script src="bootstrap.js"></script>
-	<script src="https://unpkg.com/vue@3.5.40/dist/vue.global.prod.js"></script>
+	<script src="vue.js"></script>
 	<script src="app.js?v=4"></script>
 </body>
 
