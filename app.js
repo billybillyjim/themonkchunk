@@ -26,10 +26,76 @@ let vm = Vue.createApp({
 			analyticsSortKey: "currentDry",
 			analyticsSortDirection: "desc",
 			lastModified:null,
+			activeTab: new URLSearchParams(window.location.search).get("tab") == "profile" ? "profile" : "events",
+			profileEntries: [],
+			profileChanges: [],
+			profileBaselineAt: "",
+			profileUpdatedAt: "",
+			profilePeriod: "today",
+			profileLoading: false,
+			profileLoaded: false,
+			profileError: "",
+			profileSearch: "",
+			profilePlugin: "all",
+			lootManifest: { items: {}, npcs: {} },
 		};
 	},
 	delimiters: ["[[", "]]"],
 	computed: {
+		profilePlugins() {
+			return [...new Set([...this.profileEntries, ...this.profileChanges].map(entry => entry.plugin))].sort((a, b) => this.profileDisplayName(a).localeCompare(this.profileDisplayName(b)));
+		},
+		profileProgress() {
+			const now = new Date();
+			let start = null;
+			if (this.profilePeriod == "today") start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+			if (this.profilePeriod == "week") {
+				start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+				start.setDate(start.getDate() - (start.getDay() + 6) % 7);
+			}
+			if (this.profilePeriod == "month") start = new Date(now.getFullYear(), now.getMonth(), 1);
+			const grouped = new Map();
+			for (const change of this.profileChanges) {
+				if (start && new Date(change.at) < start) continue;
+				const id = JSON.stringify([change.plugin, change.key]);
+				if (!grouped.has(id)) grouped.set(id, { ...change, count: 1 });
+				else {
+					const item = grouped.get(id);
+					item.after = change.after;
+					item.at = change.at;
+					item.count += 1;
+				}
+			}
+			const query = this.profileSearch.trim().toLocaleLowerCase();
+			return [...grouped.values()].filter(change =>
+				change.before !== change.after &&
+				(this.profilePlugin == "all" || change.plugin == this.profilePlugin) &&
+				(!query || `${change.plugin} ${change.key} ${change.before ?? ""} ${change.after ?? ""}`.toLocaleLowerCase().includes(query))
+			).sort((a, b) => new Date(b.at) - new Date(a.at) || a.plugin.localeCompare(b.plugin) || a.key.localeCompare(b.key));
+		},
+		filteredProfileEntries() {
+			const query = this.profileSearch.trim().toLocaleLowerCase();
+			return this.profileEntries.filter(entry =>
+				(this.profilePlugin == "all" || entry.plugin == this.profilePlugin) &&
+				(!query || `${entry.plugin} ${entry.key} ${entry.value}`.toLocaleLowerCase().includes(query))
+			);
+		},
+		profileProgressGroups() {
+			return this.groupProfileItems(this.profileProgress.map(change => ({
+				...change,
+				loot: this.parseLoot(change.after ?? change.before),
+				previousLoot: this.parseLoot(change.before),
+				parsed: ["xpTracker", "wealthtracker"].includes(change.plugin) ? this.parseProfileJson(change.after ?? change.before) : null,
+				previousParsed: ["xpTracker", "wealthtracker"].includes(change.plugin) ? this.parseProfileJson(change.before) : null
+			})));
+		},
+		profileSnapshotGroups() {
+			return this.groupProfileItems(this.filteredProfileEntries.map(entry => ({
+				...entry,
+				loot: this.parseLoot(entry.value),
+				parsed: ["xpTracker", "wealthtracker"].includes(entry.plugin) ? this.parseProfileJson(entry.value) : null
+			})));
+		},
 		selectedEvent() {
 			return this.events[this.selectedIndex] || null;
 		},
@@ -189,12 +255,125 @@ let vm = Vue.createApp({
 	mounted() {
 		window.addEventListener("keydown", this.handleKeyboard);
 		this.loadEvents();
+		if (this.activeTab == "profile") this.loadProfile();
 	},
 	beforeUnmount() {
 		window.removeEventListener("keydown", this.handleKeyboard);
 		this.stopPlayback();
 	},
 	methods: {
+		selectTab(tab) {
+			this.activeTab = tab;
+			const url = new URL(window.location.href);
+			if (tab == "profile") url.searchParams.set("tab", "profile");
+			else url.searchParams.delete("tab");
+			window.history.replaceState(null, "", url);
+			if (tab == "profile" && !this.profileLoaded && !this.profileLoading) {
+				this.loadProfile();
+			}
+			if (tab != "events") this.stopPlayback();
+		},
+		async loadProfile() {
+			this.profileLoading = true;
+			this.profileError = "";
+			try {
+				const response = await fetch("profile_info.json?ts=" + Date.now(), { cache: "no-store" });
+				if (!response.ok) throw new Error("HTTP " + response.status + " while loading profile_info.json");
+				const data = await response.json();
+				if (data.profile !== "OXNNqtET" || !Array.isArray(data.entries) || !Array.isArray(data.changes)) {
+					throw new Error("profile_info.json has an unexpected format");
+				}
+				this.profileEntries = data.entries;
+				this.profileChanges = data.changes;
+				this.profileBaselineAt = data.baselineAt;
+				this.profileUpdatedAt = data.updatedAt;
+				try {
+					const manifestResponse = await fetch("images/manifest.json?ts=" + Date.now(), { cache: "no-store" });
+					if (manifestResponse.ok) this.lootManifest = await manifestResponse.json();
+				} catch (manifestError) {
+					console.warn("Loot images manifest unavailable", manifestError);
+				}
+				this.profileLoaded = true;
+			} catch (error) {
+				console.error(error);
+				this.profileError = error instanceof Error ? error.message : String(error);
+			} finally {
+				this.profileLoading = false;
+			}
+		},
+		groupProfileItems(items) {
+			const groups = new Map();
+			for (const item of items) {
+				if (!groups.has(item.plugin)) groups.set(item.plugin, []);
+				groups.get(item.plugin).push(item);
+			}
+			return [...groups].sort(([a], [b]) => this.profileDisplayName(a).localeCompare(this.profileDisplayName(b))).map(([plugin, entries]) => ({ plugin, entries }));
+		},
+		profileDisplayName(plugin) {
+			const names = {
+				WeaponAnimationReplacer: "Weapon Animation Replacer",
+				itemCharge: "Item Charges",
+				loottracker: "Loot Tracker",
+				osrstcg: "OSRS TCG",
+				questhelper: "Quest Helper",
+				randomeventanalytics: "Random Event Analytics",
+				rsprofile: "RuneLite Profile",
+				slayer: "Slayer",
+				"tasks-tracker": "Tasks Tracker",
+				timetracking: "Time Tracking",
+				transmog: "Transmog",
+				ultimatestattracker: "Ultimate Stat Tracker",
+				wealthtracker: "Wealth Tracker",
+				xpTracker: "XP Tracker (I usually reset this at the beginning of any given day)"
+			};
+			return names[plugin] || plugin.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/[-_]/g, " ");
+		},
+		profileEntryLabel(plugin, key) {
+			if (plugin != "ultimatestattracker") return key;
+			return key.replace(/date$/i, "Date")
+				.replace(/([a-z0-9])([A-Z])/g, "$1 $2")
+				.replace(/([A-Z])([A-Z][a-z])/g, "$1 $2")
+				.replace(/_/g, " ")
+				.replace(/^./, first => first.toUpperCase());
+		},
+		parseProfileJson(value) {
+			if (value == null) return null;
+			try { return JSON.parse(value); } catch { return null; }
+		},
+		parseLoot(value) {
+			if (!value) return null;
+			try {
+				const loot = JSON.parse(value);
+				if (!loot || !Array.isArray(loot.drops) || !loot.name) return null;
+				return {
+					...loot,
+					items: Array.from({ length: Math.floor(loot.drops.length / 2) }, (_, index) => ({
+						id: loot.drops[index * 2],
+						count: loot.drops[index * 2 + 1]
+					}))
+				};
+			} catch {
+				return null;
+			}
+		},
+		profileDelta(change) {
+			if (change.before == null || change.after == null) return "";
+			const numeric = /^-?(?:\d+\.?\d*|\.\d+)$/;
+			if (!numeric.test(change.before) || !numeric.test(change.after)) return "";
+			const difference = Number(change.after) - Number(change.before);
+			if (!Number.isFinite(difference) || difference == 0) return "";
+			return (difference > 0 ? "+" : "") + difference.toLocaleString();
+		},
+		ultimateStatDelta(change) {
+			const current = Number(change.after);
+			const previous = change.before == null ? 0 : Number(change.before);
+			return Number.isFinite(current) && Number.isFinite(previous) ? current - previous : null;
+		},
+		profileChangeLabel(change) {
+			if (change.before == null) return "Added";
+			if (change.after == null) return "Removed";
+			return this.profileDelta(change) || "Changed";
+		},
 		sortAnalytics(sortKey) {
 			if (this.analyticsSortKey == sortKey) {
 				this.analyticsSortDirection = this.analyticsSortDirection == "asc" ? "desc" : "asc";
@@ -404,6 +583,7 @@ let vm = Vue.createApp({
 			}
 		},
 		handleKeyboard(keyboardEvent) {
+			if (this.activeTab != "events") return;
 			if (keyboardEvent.target.matches && keyboardEvent.target.matches("input, button, textarea, select")) {
 				return;
 			}
@@ -481,6 +661,95 @@ let vm = Vue.createApp({
 			}
 
 			return "Not dry";
+		}
+	}
+}).component("loot-card", {
+	props: ["loot", "previous", "manifest", "removed"],
+	template: "#loot-card-template",
+	delimiters: ["[[", "]]"],
+	computed: {
+		previousCounts() {
+			return new Map((this.previous?.items || []).map(item => [item.id, Number(item.count)]));
+		},
+		displayItems() {
+			const items = [...this.loot.items];
+			const currentIds = new Set(items.map(item => item.id));
+			for (const item of this.previous?.items || []) {
+				if (!currentIds.has(item.id)) items.push({ id: item.id, count: 0 });
+			}
+			return items;
+		},
+		killDelta() {
+			if (!this.previous || this.removed) return null;
+			return Number(this.loot.kills) - Number(this.previous.kills);
+		},
+		countLabel() {
+			if (/\bimpling\b/i.test(this.loot.name)) return "caught";
+			return this.loot.type == "NPC" ? "kills" : "opens";
+		}
+	},
+	methods: {
+		formatLootDate(timestamp) {
+			if (!timestamp) return "Unknown";
+			return new Intl.DateTimeFormat(undefined, { year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(new Date(timestamp));
+		},
+		itemDelta(item) {
+			if (!this.previous || this.removed) return null;
+			return Number(item.count) - (this.previousCounts.get(item.id) || 0);
+		}
+	}
+}).component("xp-tracker-table", {
+	props: ["state"],
+	template: "#xp-tracker-table-template",
+	delimiters: ["[[", "]]"],
+	computed: {
+		rows() {
+			if (!this.state || typeof this.state !== "object") return [];
+			const makeRow = (name, record) => {
+				const start = Number(record?.s) || 0;
+				const gained = (Number(record?.br) || 0) + (Number(record?.ar) || 0);
+				return { name, start, gained, current: start + gained, time: Number(record?.t) || 0 };
+			};
+			const rows = [];
+			if (this.state.overall) rows.push(makeRow("Overall", this.state.overall));
+			for (const [skill, record] of Object.entries(this.state.skills || {})) {
+				rows.push(makeRow(skill.charAt(0) + skill.slice(1).toLowerCase(), record));
+			}
+			return rows;
+		}
+	},
+	methods: {
+		formatTrackedTime(milliseconds) {
+			const minutes = Math.floor(milliseconds / 60000);
+			return `${Math.floor(minutes / 60)}h ${minutes % 60}m`;
+		}
+	}
+}).component("wealth-tracker-table", {
+	props: ["state", "previous"],
+	template: "#wealth-tracker-table-template",
+	delimiters: ["[[", "]]"],
+	computed: {
+		snapshots() {
+			return Array.isArray(this.state) ? [...this.state].sort((a, b) => Number(b.timestamp) - Number(a.timestamp)) : [];
+		},
+		latestItems() {
+			return Object.values(this.snapshots[0]?.itemBreakdown || {}).sort((a, b) => Number(b.totalValue) - Number(a.totalValue));
+		},
+		latestDelta() {
+			if (!Array.isArray(this.previous) || !this.previous.length || !this.snapshots.length) return null;
+			const latestPrevious = [...this.previous].sort((a, b) => Number(b.timestamp) - Number(a.timestamp))[0];
+			return Number(this.snapshots[0].totalNetWorth) - Number(latestPrevious.totalNetWorth);
+		}
+	},
+	methods: {
+		formatSnapshotDate(timestamp) {
+			return new Intl.DateTimeFormat(undefined, { year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(new Date(timestamp));
+		},
+		formatGold(value) {
+			return (Number(value) || 0).toLocaleString();
+		},
+		otherValue(snapshot) {
+			return (Number(snapshot.lootingBagValue) || 0) + (Number(snapshot.seedVaultValue) || 0) + (Number(snapshot.groupStorageValue) || 0);
 		}
 	}
 }).mount("#app");

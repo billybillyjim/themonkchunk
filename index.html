@@ -177,6 +177,117 @@
 			background-color: var(--bs-info-bg-subtle) !important;
 		}
 
+		.profile-value {
+			white-space: pre-wrap;
+			overflow-wrap: anywhere;
+			max-height: 18rem;
+			overflow: auto;
+		}
+
+		.profile-setting {
+			padding: 0.45rem 0;
+			border-top: 1px solid var(--bs-border-color);
+		}
+
+		.profile-setting:first-child {
+			border-top: 0;
+			padding-top: 0;
+		}
+
+		.profile-plugin-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+			align-items: start;
+			gap: 0.75rem;
+		}
+
+		.profile-plugin-grid .profile-wide {
+			grid-column: 1 / -1;
+		}
+
+		.profile-simple-row {
+			display: grid;
+			grid-template-columns: minmax(8rem, 45%) minmax(0, 1fr);
+			gap: 0.5rem;
+			align-items: baseline;
+			font-size: 0.875rem;
+		}
+
+		.profile-simple-row>* {
+			min-width: 0;
+			overflow-wrap: anywhere;
+			white-space: pre-wrap;
+		}
+
+		.profile-data-table th,
+		.profile-data-table td {
+			white-space: nowrap;
+		}
+
+		.stat-changes-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+			gap: 0.45rem;
+		}
+
+		.stat-change {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) auto;
+			align-items: center;
+			gap: 0.75rem;
+			padding: 0.45rem 0.65rem;
+			border: 1px solid var(--bs-border-color);
+			border-radius: var(--bs-border-radius-sm);
+			background: var(--bs-tertiary-bg);
+			font-size: 0.875rem;
+		}
+
+		.stat-change-name {
+			min-width: 0;
+			line-height: 1.25;
+		}
+
+		.stat-change-value {
+			white-space: nowrap;
+			text-align: right;
+		}
+
+		.loot-record {
+			background: #26221c;
+			border: 1px solid #5d503c;
+			border-radius: 0.4rem;
+			padding: 1rem;
+		}
+
+		.loot-npc-image {
+			width: 64px;
+			height: 64px;
+			object-fit: contain;
+			image-rendering: pixelated;
+		}
+
+		.loot-items {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
+			gap: 0.5rem;
+		}
+
+		.loot-slot {
+			min-width: 0;
+			padding: 0.5rem 0.25rem;
+			border: 1px solid #6c5c43;
+			border-radius: 0.25rem;
+			background: #393024;
+			text-align: center;
+		}
+
+		.loot-item-image {
+			width: 36px;
+			height: 36px;
+			object-fit: contain;
+			image-rendering: pixelated;
+		}
+
 		@include color-mode(dark) {
 
 		}
@@ -189,11 +300,11 @@
 			<div>
 				<p class="mb-1 text-uppercase fw-semibold small text-primary">
 					<a href="https://wiseoldman.net/players/themonkchunk/gained?metric=overall&period=year">TheMonkChunk</a></p>
-				<h1 class="display-5 fw-bold mb-1">Random event timeline</h1>
-				<p class="lead text-body-secondary mb-0">Monastery chunk - Last Updated [[ lastModified ]]</p>
+				<h1 class="display-5 fw-bold mb-1">[[ activeTab == 'events' ? 'Random event timeline' : 'Other Fun Stats' ]]</h1>
+				<p class="lead text-body-secondary mb-0" v-if="activeTab == 'events'">Monastery chunk - Last Updated [[ lastModified ]]</p>
 			</div>
 
-			<div class="card shadow-sm border-0">
+			<div v-if="activeTab == 'events'" class="card shadow-sm border-0">
 				<div class="card-body py-3 px-4 text-md-end" aria-label="Event count">
 					<strong class="d-block fs-3 lh-1">[[ events.length.toLocaleString() ]]</strong>
 					<span class="text-body-secondary">recorded events</span>
@@ -204,6 +315,11 @@
 				</div>
 			</div>
 		</header>
+		<nav class="nav nav-tabs mb-4" aria-label="Page sections">
+			<button type="button" class="nav-link" :class="{ active: activeTab == 'events' }" :aria-current="activeTab == 'events' ? 'page' : null" @click="selectTab('events')">Random events</button>
+			<button type="button" class="nav-link" :class="{ active: activeTab == 'profile' }" :aria-current="activeTab == 'profile' ? 'page' : null" @click="selectTab('profile')">Profile data</button>
+		</nav>
+		<div v-show="activeTab == 'events'">
 
 		<section v-if="isLoading" class="card shadow-sm mb-4" aria-live="polite">
 			<div class="card-body p-4">
@@ -215,6 +331,9 @@
 					</div>
 				</div>
 			</div>
+		</section>
+		<section v-else-if="loadError || !events.length" class="alert alert-danger" role="alert">
+			Could not load random events: [[ loadError || 'No events found.' ]]
 		</section>
 		<template v-else>
 			<section class="row g-4 mb-4" aria-label="Random event map and selected event">
@@ -444,11 +563,125 @@
 				</div>
 			</section>
 		</template>
+		</div>
+		<section v-if="activeTab == 'profile'" aria-label="RuneLite profile data">
+			<div v-if="profileLoading" class="card shadow-sm"><div class="card-body p-4" role="status">Loading profile data...</div></div>
+			<div v-else-if="profileError" class="alert alert-danger" role="alert">
+				[[ profileError ]] <button type="button" class="btn btn-sm btn-outline-danger ms-2" @click="loadProfile">Retry</button>
+			</div>
+			<template v-else-if="profileLoaded">
+				<div class="card shadow-sm mb-4"><div class="card-body p-3 p-lg-4">
+					<h2 class="h4 mb-1">Progress</h2>
+					<div class="btn-group mb-3 flex-wrap" role="group" aria-label="Progress period">
+						<button v-for="period in [{ id: 'today', label: 'Today' }, { id: 'week', label: 'This week' }, { id: 'month', label: 'This month' }, { id: 'all', label: 'All time' }]" :key="period.id" type="button" class="btn" :class="profilePeriod == period.id ? 'btn-primary' : 'btn-outline-primary'" :aria-pressed="profilePeriod == period.id" @click="profilePeriod = period.id">[[ period.label ]]</button>
+					</div>
+					<div class="row g-3">
+						<div class="col-md-8"><label class="form-label" for="profile-search">Search keys and values</label><input id="profile-search" class="form-control" type="search" v-model="profileSearch" placeholder="Search profile data"></div>
+						<div class="col-md-4"><label class="form-label" for="profile-plugin">Plugin</label><select id="profile-plugin" class="form-select" v-model="profilePlugin"><option value="all">All plugins</option><option v-for="plugin in profilePlugins" :key="plugin" :value="plugin">[[ profileDisplayName(plugin) ]]</option></select></div>
+					</div>
+				</div></div>
+				<details open class="card shadow-sm mb-4"><summary class="card-header bg-body p-3 fw-semibold">Recent changes</summary>
+					<div class="card-body p-2 p-md-3">
+						<div v-if="!profileProgress.length" class="alert alert-secondary mb-0">No changes recorded for this period. Progress begins with the next changed snapshot.</div>
+						<div v-else class="profile-plugin-grid">
+							<section v-for="group in profileProgressGroups" :key="group.plugin" class="card shadow-sm" :class="{ 'profile-wide': ['loottracker', 'ultimatestattracker', 'xpTracker', 'wealthtracker'].includes(group.plugin) }">
+								<div class="card-header bg-body p-2 px-3"><h3 class="h6 mb-0">[[ profileDisplayName(group.plugin) ]]</h3></div>
+								<div class="card-body p-2 px-3">
+									<div v-if="group.plugin == 'ultimatestattracker'" class="stat-changes-grid">
+										<div v-for="change in group.entries" :key="change.key" class="stat-change" :title="'Updated ' + formatDate(change.at)">
+											<span class="stat-change-name">[[ profileEntryLabel(group.plugin, change.key) ]]</span>
+											<span class="stat-change-value"><strong>[[ Number(change.after).toLocaleString() ]]</strong><span v-if="ultimateStatDelta(change) !== null && ultimateStatDelta(change) !== 0" class="ms-1" :class="ultimateStatDelta(change) > 0 ? 'text-success' : 'text-danger'">([[ ultimateStatDelta(change) > 0 ? '+' : '' ]][[ ultimateStatDelta(change).toLocaleString() ]])</span></span>
+										</div>
+									</div>
+									<template v-else>
+										<div v-for="change in group.entries" :key="change.key" class="profile-setting">
+											<div v-if="group.plugin == 'loottracker'" class="d-flex flex-wrap justify-content-between gap-2 mb-1"><strong class="small font-monospace" style="overflow-wrap:anywhere">[[ change.loot ? change.loot.name : change.key ]]</strong><div class="text-end"><span class="badge text-bg-primary">[[ profileChangeLabel(change) ]]</span><div class="small text-body-secondary">[[ formatDate(change.at) ]]</div></div></div>
+											<div v-else class="small text-body-secondary mb-1">Updated [[ formatDate(change.at) ]]</div>
+											<loot-card v-if="group.plugin == 'loottracker' && change.loot" :loot="change.loot" :previous="change.previousLoot" :manifest="lootManifest" :removed="change.after == null"></loot-card>
+											<xp-tracker-table v-else-if="group.plugin == 'xpTracker' && change.parsed" :state="change.parsed"></xp-tracker-table>
+											<wealth-tracker-table v-else-if="group.plugin == 'wealthtracker' && change.parsed" :state="change.parsed" :previous="change.previousParsed"></wealth-tracker-table>
+											<div v-else class="small text-body-secondary" style="overflow-wrap:anywhere;white-space:pre-wrap">[[ change.before ?? '—' ]] → <span class="text-body">[[ change.after ?? '—' ]]</span></div>
+										</div>
+									</template>
+								</div>
+							</section>
+						</div>
+					</div>
+				</details>
+				<details open class="card shadow-sm mb-4"><summary class="card-header bg-body p-3 fw-semibold">Current data</summary>
+					<div class="card-body profile-plugin-grid p-2 p-md-3">
+						<section v-for="group in profileSnapshotGroups" :key="group.plugin" class="card" :class="{ 'profile-wide': ['loottracker', 'ultimatestattracker', 'xpTracker', 'wealthtracker'].includes(group.plugin) }">
+							<div class="card-header bg-body p-2 px-3"><h3 class="h6 mb-0">[[ profileDisplayName(group.plugin) ]]</h3></div>
+							<div class="card-body p-2 px-3" :style="group.plugin == 'ultimatestattracker' ? { maxHeight: '32rem', overflowY: 'auto' } : null">
+								<div v-for="entry in group.entries" :key="entry.key" class="profile-setting">
+									<loot-card v-if="group.plugin == 'loottracker' && entry.loot" :loot="entry.loot" :manifest="lootManifest"></loot-card>
+									<xp-tracker-table v-else-if="group.plugin == 'xpTracker' && entry.parsed" :state="entry.parsed"></xp-tracker-table>
+									<wealth-tracker-table v-else-if="group.plugin == 'wealthtracker' && entry.parsed" :state="entry.parsed"></wealth-tracker-table>
+									<template v-else><div class="profile-simple-row"><strong class="font-monospace">[[ profileEntryLabel(group.plugin, entry.key) ]]</strong><span>[[ entry.value ]]</span></div></template>
+								</div>
+							</div>
+						</section>
+						</div>
+				</details>
+			</template>
+		</section>
 	</main>
+
+	<template id="xp-tracker-table-template">
+		<div v-if="rows.length" class="table-responsive">
+			<table class="profile-data-table table table-sm table-striped align-middle mb-0">
+				<thead><tr><th scope="col">Skill</th><th scope="col" class="text-end">Starting XP</th><th scope="col" class="text-end">XP gained</th><th scope="col" class="text-end">Current XP</th><th scope="col" class="text-end">Tracked time</th></tr></thead>
+				<tbody><tr v-for="row in rows" :key="row.name"><th scope="row">[[ row.name ]]</th><td class="text-end">[[ row.start.toLocaleString() ]]</td><td class="text-end">[[ row.gained.toLocaleString() ]]</td><td class="text-end">[[ row.current.toLocaleString() ]]</td><td class="text-end">[[ formatTrackedTime(row.time) ]]</td></tr></tbody>
+			</table>
+		</div>
+		<p v-else class="text-body-secondary small mb-0">No tracked XP yet.</p>
+	</template>
+
+	<template id="wealth-tracker-table-template">
+		<div v-if="snapshots.length">
+			<div class="table-responsive">
+				<table class="profile-data-table table table-sm table-striped align-middle mb-0">
+					<thead><tr><th scope="col">Snapshot</th><th scope="col" class="text-end">Total net worth</th><th scope="col" class="text-end">Bank</th><th scope="col" class="text-end">Inventory</th><th scope="col" class="text-end">Equipment</th><th scope="col" class="text-end">Other storage</th><th scope="col" class="text-end">Coins in hand</th></tr></thead>
+					<tbody><tr v-for="(snapshot, index) in snapshots" :key="snapshot.timestamp + ':' + index"><th scope="row">[[ formatSnapshotDate(snapshot.timestamp) ]]</th><td class="text-end fw-semibold">[[ formatGold(snapshot.totalNetWorth) ]] gp<small v-if="index == 0 && latestDelta !== null && latestDelta !== 0" class="d-block" :class="latestDelta > 0 ? 'text-success' : 'text-danger'">[[ latestDelta > 0 ? '+' : '' ]][[ latestDelta.toLocaleString() ]] gp</small></td><td class="text-end">[[ formatGold(snapshot.bankValue) ]]</td><td class="text-end">[[ formatGold(snapshot.inventoryValue) ]]</td><td class="text-end">[[ formatGold(snapshot.equipmentValue) ]]</td><td class="text-end">[[ formatGold(otherValue(snapshot)) ]]</td><td class="text-end">[[ formatGold(snapshot.coinsInHand) ]]</td></tr></tbody>
+				</table>
+			</div>
+			<div v-if="latestItems.length" class="mt-3"><h4 class="h6">Latest item breakdown</h4><div class="table-responsive"><table class="profile-data-table table table-sm table-striped align-middle mb-0"><thead><tr><th scope="col">Item</th><th scope="col" class="text-end">Quantity</th><th scope="col" class="text-end">Price each</th><th scope="col" class="text-end">Total value</th></tr></thead><tbody><tr v-for="item in latestItems" :key="item.itemId"><th scope="row">[[ item.itemName || 'Item ' + item.itemId ]]</th><td class="text-end">[[ formatGold(item.quantity) ]]</td><td class="text-end">[[ formatGold(item.priceEach) ]] gp</td><td class="text-end">[[ formatGold(item.totalValue) ]] gp</td></tr></tbody></table></div></div>
+		</div>
+		<p v-else class="text-body-secondary small mb-0">No wealth snapshots yet.</p>
+	</template>
+
+	<template id="loot-card-template">
+		<div class="loot-record text-light">
+			<div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+				<img v-if="manifest.npcs[loot.name]" class="loot-npc-image" :src="'images/npcs/' + manifest.npcs[loot.name]" :alt="loot.name" loading="lazy">
+				<div v-else class="loot-npc-image d-flex align-items-center justify-content-center border rounded" aria-hidden="true">?</div>
+				<div class="flex-grow-1">
+					<div class="small text-uppercase text-warning">[[ loot.type == 'NPC' ? 'NPC loot' : 'Event loot' ]]</div>
+					<div class="fs-5 fw-bold">[[ loot.name ]]</div>
+					<div>[[ Number(loot.kills).toLocaleString() ]] [[ countLabel ]]
+						<span v-if="killDelta !== null && killDelta !== 0" class="ms-1" :class="killDelta > 0 ? 'text-success' : 'text-danger'">([[ killDelta > 0 ? '+' : '' ]][[ killDelta.toLocaleString() ]])</span>
+						<span v-if="removed" class="badge text-bg-danger ms-2">Removed</span>
+					</div>
+				</div>
+			</div>
+			<div class="d-flex flex-column gap-1 small text-white-50 mb-3">
+				<div>First seen: <span class="text-light">[[ formatLootDate(loot.first) ]]</span></div>
+				<div>Last seen: <span class="text-light">[[ formatLootDate(loot.last) ]]</span></div>
+			</div>
+			<div class="loot-items">
+				<div v-for="item in displayItems" :key="item.id" class="loot-slot" :title="(manifest.items[item.id] || 'Item ' + item.id) + ' (#' + item.id + ')'">
+					<img class="loot-item-image d-block mx-auto mb-1" :src="'images/items/' + item.id + '.png'" :alt="manifest.items[item.id] || 'Item ' + item.id" loading="lazy">
+					<div class="fw-bold">[[ Number(item.count).toLocaleString() ]]</div>
+					<div v-if="itemDelta(item) !== null && itemDelta(item) !== 0" class="small" :class="itemDelta(item) > 0 ? 'text-success' : 'text-danger'">[[ itemDelta(item) > 0 ? '+' : '' ]][[ itemDelta(item).toLocaleString() ]]</div>
+					<div class="small text-white-50 text-truncate">[[ manifest.items[item.id] || 'Item ' + item.id ]]</div>
+				</div>
+			</div>
+		</div>
+	</template>
 
 	<script src="bootstrap.js"></script>
 	<script src="vue.js"></script>
-	<script src="app.js?v=4"></script>
+	<script src="app.js?v=10"></script>
 </body>
 
 </html>
