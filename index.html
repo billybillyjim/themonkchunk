@@ -253,8 +253,8 @@
 		}
 
 		.loot-record {
-			background: #26221c;
-			border: 1px solid #5d503c;
+			background: #161616;
+			border: 1px solid #5e5e5e;
 			border-radius: 0.4rem;
 			padding: 1rem;
 		}
@@ -275,9 +275,9 @@
 		.loot-slot {
 			min-width: 0;
 			padding: 0.5rem 0.25rem;
-			border: 1px solid #6c5c43;
+			border: 1px solid #696969;
 			border-radius: 0.25rem;
-			background: #393024;
+			background: #3d3d3d;
 			text-align: center;
 		}
 
@@ -656,10 +656,9 @@
 				<img v-if="manifest.npcs[loot.name]" class="loot-npc-image" :src="'images/npcs/' + manifest.npcs[loot.name]" :alt="loot.name" loading="lazy">
 				<div v-else class="loot-npc-image d-flex align-items-center justify-content-center border rounded" aria-hidden="true">?</div>
 				<div class="flex-grow-1">
-					<div class="small text-uppercase text-warning">[[ loot.type == 'NPC' ? 'NPC loot' : 'Event loot' ]]</div>
 					<div class="fs-5 fw-bold">[[ loot.name ]]</div>
 					<div>[[ Number(loot.kills).toLocaleString() ]] [[ countLabel ]]
-						<span v-if="killDelta !== null && killDelta !== 0" class="ms-1" :class="killDelta > 0 ? 'text-success' : 'text-danger'">([[ killDelta > 0 ? '+' : '' ]][[ killDelta.toLocaleString() ]])</span>
+						<span v-if="killDelta !== null && killDelta !== 0" class="ms-1" :class="killDelta > 0 ? 'text-success fw-bold' : 'text-danger'">([[ killDelta > 0 ? '+' : '' ]][[ killDelta.toLocaleString() ]])</span>
 						<span v-if="removed" class="badge text-bg-danger ms-2">Removed</span>
 					</div>
 				</div>
@@ -672,7 +671,7 @@
 				<div v-for="item in displayItems" :key="item.id" class="loot-slot" :title="(manifest.items[item.id] || 'Item ' + item.id) + ' (#' + item.id + ')'">
 					<img class="loot-item-image d-block mx-auto mb-1" :src="'images/items/' + item.id + '.png'" :alt="manifest.items[item.id] || 'Item ' + item.id" loading="lazy">
 					<div class="fw-bold">[[ Number(item.count).toLocaleString() ]]</div>
-					<div v-if="itemDelta(item) !== null && itemDelta(item) !== 0" class="small" :class="itemDelta(item) > 0 ? 'text-success' : 'text-danger'">[[ itemDelta(item) > 0 ? '+' : '' ]][[ itemDelta(item).toLocaleString() ]]</div>
+					<div v-if="itemDelta(item) !== null && itemDelta(item) !== 0" class="small" :class="itemDelta(item) > 0 ? 'text-success fw-bold' : 'text-danger'">[[ itemDelta(item) > 0 ? '+' : '' ]][[ itemDelta(item).toLocaleString() ]]</div>
 					<div class="small text-white-50 text-truncate">[[ manifest.items[item.id] || 'Item ' + item.id ]]</div>
 				</div>
 			</div>

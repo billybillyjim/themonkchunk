@@ -677,7 +677,7 @@ let vm = Vue.createApp({
 			for (const item of this.previous?.items || []) {
 				if (!currentIds.has(item.id)) items.push({ id: item.id, count: 0 });
 			}
-			return items;
+			return items.sort((a, b) => Number(b.count) - Number(a.count));
 		},
 		killDelta() {
 			if (!this.previous || this.removed) return null;
