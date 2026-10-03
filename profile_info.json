@@ -1,7 +1,7 @@
 {
   "profile": "OXNNqtET",
   "baselineAt": "2026-09-30T20:09:22.981778+00:00",
-  "updatedAt": "2026-10-02T03:55:19.824899+00:00",
+  "updatedAt": "2026-10-03T03:55:19.793460+00:00",
   "entries": [
     {
       "plugin": "loottracker",
@@ -11,7 +11,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Baby impling",
-      "value": "{\"type\":\"NPC\",\"name\":\"Baby impling\",\"kills\":37,\"first\":1747260531815,\"last\":1790796862546,\"drops\":[1759,1,1755,7,1733,3,1734,4,319,8,2347,9,1985,2,23182,3,1438,1,7170,1,401,1]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Baby impling\",\"kills\":38,\"first\":1747260531815,\"last\":1790972088151,\"drops\":[1759,1,1755,7,1733,3,1734,4,319,8,2347,9,1985,2,23182,3,1438,1,7170,2,401,1]}"
     },
     {
       "plugin": "loottracker",
@@ -41,7 +41,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Imp",
-      "value": "{\"type\":\"NPC\",\"name\":\"Imp\",\"kills\":1906,\"first\":1710372627372,\"last\":1790901878099,\"drops\":[25766,1906,1949,31,1944,78,579,126,1472,77,1474,80,590,77,1759,112,753,53,1925,61,592,88,2146,54,2142,12,1965,28,1476,78,2307,25,1735,61,2138,64,1470,78,2311,62,2347,138,1933,21,1448,106,1929,27,434,58,1935,25,1931,25,877,126,1947,54,13453,66,1937,21,195,20,956,25,2309,15]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Imp\",\"kills\":1910,\"first\":1710372627372,\"last\":1790985292764,\"drops\":[25766,1910,1949,31,1944,78,579,127,1472,77,1474,80,590,77,1759,112,753,54,1925,61,592,88,2146,54,2142,12,1965,28,1476,78,2307,25,1735,61,2138,64,1470,78,2311,62,2347,138,1933,21,1448,107,1929,27,434,58,1935,25,1931,25,877,127,1947,54,13453,68,1937,21,195,20,956,25,2309,15]}"
     },
     {
       "plugin": "loottracker",
@@ -51,7 +51,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Monk",
-      "value": "{\"type\":\"NPC\",\"name\":\"Monk\",\"kills\":94981,\"first\":1710210904716,\"last\":1790902178201,\"drops\":[526,94981,946,1]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Monk\",\"kills\":95458,\"first\":1710210904716,\"last\":1790987993993,\"drops\":[526,95458,946,1]}"
     },
     {
       "plugin": "loottracker",
@@ -71,17 +71,17 @@
     {
       "plugin": "ultimatestattracker",
       "key": "ashesScattered",
-      "value": "364"
+      "value": "368"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksBlocked",
-      "value": "33363"
+      "value": "34127"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksMissed",
-      "value": "4284"
+      "value": "4375"
     },
     {
       "plugin": "ultimatestattracker",
@@ -101,7 +101,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "bonesBuried",
-      "value": "21261"
+      "value": "21734"
     },
     {
       "plugin": "ultimatestattracker",
@@ -116,12 +116,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "damageDone",
-      "value": "326441"
+      "value": "333638"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "damageReceived",
-      "value": "1474"
+      "value": "1499"
     },
     {
       "plugin": "ultimatestattracker",
@@ -136,17 +136,17 @@
     {
       "plugin": "ultimatestattracker",
       "key": "hpRegen",
-      "value": "1337"
+      "value": "1362"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "implingsCaught",
-      "value": "102"
+      "value": "103"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "itemsDropped",
-      "value": "151"
+      "value": "157"
     },
     {
       "plugin": "ultimatestattracker",
@@ -156,7 +156,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "potionSips",
-      "value": "16"
+      "value": "18"
     },
     {
       "plugin": "ultimatestattracker",
@@ -166,7 +166,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "tilesWalked",
-      "value": "6644"
+      "value": "8966"
     },
     {
       "plugin": "ultimatestattracker",
@@ -186,7 +186,7 @@
     {
       "plugin": "xpTracker",
       "key": "state",
-      "value": "{\"skills\":{\"STRENGTH\":{\"s\":12854108,\"br\":0,\"ar\":12244,\"t\":5343628},\"HITPOINTS\":{\"s\":4429656,\"br\":0,\"ar\":4061,\"t\":5343628},\"PRAYER\":{\"s\":957518,\"br\":0,\"ar\":875,\"t\":5328903},\"HUNTER\":{\"s\":172015,\"br\":0,\"ar\":572,\"t\":3474449}},\"compactViewSkills\":[],\"overall\":{\"s\":18963087,\"br\":0,\"ar\":17752,\"t\":5343628}}"
+      "value": "{\"skills\":{\"STRENGTH\":{\"s\":12866352,\"br\":0,\"ar\":30900,\"t\":20418714},\"HITPOINTS\":{\"s\":4433717,\"br\":0,\"ar\":10250,\"t\":20418714},\"PRAYER\":{\"s\":958393,\"br\":0,\"ar\":2169,\"t\":20405313},\"HUNTER\":{\"s\":172587,\"br\":0,\"ar\":1670,\"t\":17254198}},\"compactViewSkills\":[],\"overall\":{\"s\":18980839,\"br\":0,\"ar\":44989,\"t\":20418714}}"
     }
   ],
   "changes": [
@@ -602,6 +602,111 @@
       "key": "state",
       "before": "{\"skills\":{\"STRENGTH\":{\"s\":12833876,\"br\":0,\"ar\":20232,\"t\":27878364},\"HITPOINTS\":{\"s\":4422944,\"br\":0,\"ar\":6712,\"t\":27878364},\"PRAYER\":{\"s\":956098,\"br\":0,\"ar\":1420,\"t\":27852548},\"HUNTER\":{\"s\":169747,\"br\":0,\"ar\":2268,\"t\":26691324}},\"compactViewSkills\":[],\"overall\":{\"s\":18932455,\"br\":0,\"ar\":30632,\"t\":27878364}}",
       "after": "{\"skills\":{\"STRENGTH\":{\"s\":12854108,\"br\":0,\"ar\":12244,\"t\":5343628},\"HITPOINTS\":{\"s\":4429656,\"br\":0,\"ar\":4061,\"t\":5343628},\"PRAYER\":{\"s\":957518,\"br\":0,\"ar\":875,\"t\":5328903},\"HUNTER\":{\"s\":172015,\"br\":0,\"ar\":572,\"t\":3474449}},\"compactViewSkills\":[],\"overall\":{\"s\":18963087,\"br\":0,\"ar\":17752,\"t\":5343628}}"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Baby impling",
+      "before": "{\"type\":\"NPC\",\"name\":\"Baby impling\",\"kills\":37,\"first\":1747260531815,\"last\":1790796862546,\"drops\":[1759,1,1755,7,1733,3,1734,4,319,8,2347,9,1985,2,23182,3,1438,1,7170,1,401,1]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Baby impling\",\"kills\":38,\"first\":1747260531815,\"last\":1790972088151,\"drops\":[1759,1,1755,7,1733,3,1734,4,319,8,2347,9,1985,2,23182,3,1438,1,7170,2,401,1]}"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Imp",
+      "before": "{\"type\":\"NPC\",\"name\":\"Imp\",\"kills\":1906,\"first\":1710372627372,\"last\":1790901878099,\"drops\":[25766,1906,1949,31,1944,78,579,126,1472,77,1474,80,590,77,1759,112,753,53,1925,61,592,88,2146,54,2142,12,1965,28,1476,78,2307,25,1735,61,2138,64,1470,78,2311,62,2347,138,1933,21,1448,106,1929,27,434,58,1935,25,1931,25,877,126,1947,54,13453,66,1937,21,195,20,956,25,2309,15]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Imp\",\"kills\":1910,\"first\":1710372627372,\"last\":1790985292764,\"drops\":[25766,1910,1949,31,1944,78,579,127,1472,77,1474,80,590,77,1759,112,753,54,1925,61,592,88,2146,54,2142,12,1965,28,1476,78,2307,25,1735,61,2138,64,1470,78,2311,62,2347,138,1933,21,1448,107,1929,27,434,58,1935,25,1931,25,877,127,1947,54,13453,68,1937,21,195,20,956,25,2309,15]}"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Monk",
+      "before": "{\"type\":\"NPC\",\"name\":\"Monk\",\"kills\":94981,\"first\":1710210904716,\"last\":1790902178201,\"drops\":[526,94981,946,1]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Monk\",\"kills\":95458,\"first\":1710210904716,\"last\":1790987993993,\"drops\":[526,95458,946,1]}"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "ashesScattered",
+      "before": "364",
+      "after": "368"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksBlocked",
+      "before": "33363",
+      "after": "34127"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksMissed",
+      "before": "4284",
+      "after": "4375"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "bonesBuried",
+      "before": "21261",
+      "after": "21734"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageDone",
+      "before": "326441",
+      "after": "333638"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageReceived",
+      "before": "1474",
+      "after": "1499"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hpRegen",
+      "before": "1337",
+      "after": "1362"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "implingsCaught",
+      "before": "102",
+      "after": "103"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "itemsDropped",
+      "before": "151",
+      "after": "157"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "potionSips",
+      "before": "16",
+      "after": "18"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "tilesWalked",
+      "before": "6644",
+      "after": "8966"
+    },
+    {
+      "at": "2026-10-03T03:55:19.793460+00:00",
+      "plugin": "xpTracker",
+      "key": "state",
+      "before": "{\"skills\":{\"STRENGTH\":{\"s\":12854108,\"br\":0,\"ar\":12244,\"t\":5343628},\"HITPOINTS\":{\"s\":4429656,\"br\":0,\"ar\":4061,\"t\":5343628},\"PRAYER\":{\"s\":957518,\"br\":0,\"ar\":875,\"t\":5328903},\"HUNTER\":{\"s\":172015,\"br\":0,\"ar\":572,\"t\":3474449}},\"compactViewSkills\":[],\"overall\":{\"s\":18963087,\"br\":0,\"ar\":17752,\"t\":5343628}}",
+      "after": "{\"skills\":{\"STRENGTH\":{\"s\":12866352,\"br\":0,\"ar\":30900,\"t\":20418714},\"HITPOINTS\":{\"s\":4433717,\"br\":0,\"ar\":10250,\"t\":20418714},\"PRAYER\":{\"s\":958393,\"br\":0,\"ar\":2169,\"t\":20405313},\"HUNTER\":{\"s\":172587,\"br\":0,\"ar\":1670,\"t\":17254198}},\"compactViewSkills\":[],\"overall\":{\"s\":18980839,\"br\":0,\"ar\":44989,\"t\":20418714}}"
     }
   ]
 }
