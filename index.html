@@ -675,7 +675,6 @@
 								<div><span class="d-block small text-body-secondary">Estimated time remaining</span><strong>[[ goal.progress.daysRemaining === null ? 'Unavailable' : goal.progress.daysRemaining.toLocaleString(undefined, { maximumFractionDigits: 1 }) + ' days' ]]</strong></div>
 								<div><span class="d-block small text-body-secondary">Estimated completion</span><strong>[[ goal.progress.remaining === 0 ? 'Complete' : goal.progress.completionAt === null ? 'More history needed' : formatCompletionDate(goal.progress.completionAt) ]]</strong></div>
 							</div>
-							<p class="small text-body-secondary mt-3 mb-0">Rates compare the original and latest saved XP Tracker data over elapsed calendar days, including days without play.</p>
 						</template>
 						<p v-else class="text-body-secondary mb-0">No [[ goal.name ]] XP available in the XP Tracker yet.</p>
 					</div>
