@@ -48,7 +48,7 @@ let vm = Vue.createApp({
 		profileProgress() {
 			const now = new Date();
 			let start = null;
-			if (this.profilePeriod == "today") start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+			if (this.profilePeriod == "today") start = new Date(now.getTime() - 24 * 60 * 60 * 1000);
 			if (this.profilePeriod == "week") {
 				start = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 				start.setDate(start.getDate() - (start.getDay() + 6) % 7);
@@ -280,7 +280,7 @@ let vm = Vue.createApp({
 				const response = await fetch("profile_info.json?ts=" + Date.now(), { cache: "no-store" });
 				if (!response.ok) throw new Error("HTTP " + response.status + " while loading profile_info.json");
 				const data = await response.json();
-				if (data.profile !== "OXNNqtET" || !Array.isArray(data.entries) || !Array.isArray(data.changes)) {
+				if (data.profile != "OXNNqtET" || !Array.isArray(data.entries) || !Array.isArray(data.changes)) {
 					throw new Error("profile_info.json has an unexpected format");
 				}
 				this.profileEntries = data.entries;
