@@ -26,7 +26,7 @@ let vm = Vue.createApp({
 			analyticsSortKey: "currentDry",
 			analyticsSortDirection: "desc",
 			lastModified:null,
-			activeTab: new URLSearchParams(window.location.search).get("tab") == "profile" ? "profile" : "events",
+			activeTab: ["profile", "xp"].includes(new URLSearchParams(window.location.search).get("tab")) ? new URLSearchParams(window.location.search).get("tab") : "events",
 			profileEntries: [],
 			profileChanges: [],
 			profileBaselineAt: "",
@@ -42,6 +42,43 @@ let vm = Vue.createApp({
 	},
 	delimiters: ["[[", "]]"],
 	computed: {
+		xpTrackerState() {
+			const entry = this.profileEntries.find(entry => entry.plugin == "xpTracker" && entry.key == "state");
+			return this.parseProfileJson(entry?.value);
+		},
+		skillGoals() {
+			const firstChange = this.profileChanges.filter(change => change.plugin == "xpTracker" && change.key == "state")
+				.sort((a, b) => new Date(a.at) - new Date(b.at))[0];
+			const baseline = this.parseProfileJson(firstChange?.before);
+			const updatedAt = new Date(this.profileUpdatedAt).getTime();
+			const elapsedDays = (updatedAt - new Date(this.profileBaselineAt).getTime()) / 86400000;
+			return ["Strength", "Prayer"].map(name => {
+				const skill = name.toUpperCase();
+				const record = this.xpTrackerState?.skills?.[skill];
+				const current = this.trackedXp(record);
+				if (current === null) return { name, progress: null };
+				const target = 13034431;
+				const remaining = Math.max(0, target - current);
+				const baselineXp = this.trackedXp(baseline?.skills?.[skill]);
+				const xpPerDay = baselineXp !== null && Number.isFinite(elapsedDays) && elapsedDays > 0 && current >= baselineXp ? (current - baselineXp) / elapsedDays : null;
+				const daysRemaining = remaining === 0 ? 0 : xpPerDay > 0 ? remaining / xpPerDay : null;
+				const completionAt = remaining === 0 || daysRemaining === null ? null : updatedAt + daysRemaining * 86400000;
+				return { name, progress: {
+					current, target, remaining,
+					percent: Math.min(100, current / target * 100),
+					xpPerDay,
+					daysRemaining,
+					completionAt: completionAt !== null && Number.isFinite(new Date(completionAt).getTime()) ? completionAt : null
+				} };
+			});
+		},
+		profilePlayTime() {
+			const tracked = Number(this.xpTrackerState?.overall?.t);
+			return {
+				estimated: !this.isLoading && !this.loadError && this.events.length ? this.events.length * 90 * 60000 : null,
+				tracked: Number.isFinite(tracked) && tracked >= 0 ? tracked : null
+			};
+		},
 		profilePlugins() {
 			return [...new Set([...this.profileEntries, ...this.profileChanges].map(entry => entry.plugin))].sort((a, b) => this.profileDisplayName(a).localeCompare(this.profileDisplayName(b)));
 		},
@@ -255,20 +292,32 @@ let vm = Vue.createApp({
 	mounted() {
 		window.addEventListener("keydown", this.handleKeyboard);
 		this.loadEvents();
-		if (this.activeTab == "profile") this.loadProfile();
+		if (["profile", "xp"].includes(this.activeTab)) this.loadProfile();
 	},
 	beforeUnmount() {
 		window.removeEventListener("keydown", this.handleKeyboard);
 		this.stopPlayback();
 	},
 	methods: {
+		trackedXp(record) {
+			if (!record || record.s == null) return null;
+			const current = Number(record.s) + (Number(record.br) || 0) + (Number(record.ar) || 0);
+			return Number.isFinite(current) && current >= 0 ? current : null;
+		},
+		formatPlayTime(milliseconds) {
+			const minutes = Math.floor(milliseconds / 60000);
+			return `${Math.floor(minutes / 1440)}d ${Math.floor(minutes / 60) % 24}h ${minutes % 60}m`;
+		},
+		formatCompletionDate(timestamp) {
+			return new Intl.DateTimeFormat(undefined, { year: "numeric", month: "short", day: "numeric", timeZone: "America/Chicago" }).format(new Date(timestamp));
+		},
 		selectTab(tab) {
 			this.activeTab = tab;
 			const url = new URL(window.location.href);
-			if (tab == "profile") url.searchParams.set("tab", "profile");
+			if (tab != "events") url.searchParams.set("tab", tab);
 			else url.searchParams.delete("tab");
 			window.history.replaceState(null, "", url);
-			if (tab == "profile" && !this.profileLoaded && !this.profileLoading) {
+			if (["profile", "xp"].includes(tab) && !this.profileLoaded && !this.profileLoading) {
 				this.loadProfile();
 			}
 			if (tab != "events") this.stopPlayback();
