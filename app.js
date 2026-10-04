@@ -324,7 +324,7 @@ let vm = Vue.createApp({
 				transmog: "Transmog",
 				ultimatestattracker: "Ultimate Stat Tracker",
 				wealthtracker: "Wealth Tracker",
-				xpTracker: "XP Tracker (I usually reset this at the beginning of any given day)"
+				xpTracker: "XP Tracker"
 			};
 			return names[plugin] || plugin.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/[-_]/g, " ");
 		},
