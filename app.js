@@ -47,15 +47,19 @@ let vm = Vue.createApp({
 			return this.parseProfileJson(entry?.value);
 		},
 		skillGoals() {
-			const firstChange = this.profileChanges.filter(change => change.plugin == "xpTracker" && change.key == "state")
-				.sort((a, b) => new Date(a.at) - new Date(b.at))[0];
-			const baseline = this.parseProfileJson(firstChange?.before);
+			const changes = this.profileChanges.filter(change => change.plugin == "xpTracker" && change.key == "state")
+				.sort((a, b) => new Date(b.at) - new Date(a.at));
+			const baseline = this.parseProfileJson(changes[changes.length - 1]?.before);
+			// Uploads can omit inactive skills; search each skill's latest known record.
+			const states = [this.xpTrackerState, ...changes.flatMap(change => [
+				this.parseProfileJson(change.after), this.parseProfileJson(change.before)
+			])];
 			const updatedAt = new Date(this.profileUpdatedAt).getTime();
 			const elapsedDays = (updatedAt - new Date(this.profileBaselineAt).getTime()) / 86400000;
-			return ["Strength", "Prayer"].map(name => {
+			return ["Strength", "Prayer", "Attack"].map(name => {
 				const skill = name.toUpperCase();
-				const record = this.xpTrackerState?.skills?.[skill];
-				const current = this.trackedXp(record);
+				const current = states.map(state => this.trackedXp(state?.skills?.[skill]))
+					.find(xp => xp !== null) ?? null;
 				if (current === null) return { name, progress: null };
 				const target = 13034431;
 				const remaining = Math.max(0, target - current);
