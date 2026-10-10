@@ -54,12 +54,13 @@ let vm = Vue.createApp({
 				{ state: this.parseProfileJson(change.before), at: changes[index + 1]?.at ?? this.profileBaselineAt }
 			])];
 			const updatedAt = new Date(this.profileUpdatedAt).getTime();
-			return ["Strength", "Prayer", "Attack"].map(name => {
+			return ["Strength", "Prayer", "Attack", "Hunter"].map(name => {
+				const level = name === "Hunter" ? 60 : 99;
 				const skill = name.toUpperCase();
 				const current = states.map(({ state }) => this.trackedXp(state?.skills?.[skill]))
 					.find(xp => xp !== null) ?? null;
-				if (current === null) return { name, progress: null };
-				const target = 13034431;
+				if (current === null) return { name, level, progress: null };
+				const target = level === 60 ? 273742 : 13034431;
 				const remaining = Math.max(0, target - current);
 				const baseline = states.findLast(({ state }) => this.trackedXp(state?.skills?.[skill]) !== null);
 				const baselineXp = this.trackedXp(baseline?.state?.skills?.[skill]);
@@ -67,7 +68,7 @@ let vm = Vue.createApp({
 				const xpPerDay = baselineXp !== null && Number.isFinite(elapsedDays) && elapsedDays > 0 && current >= baselineXp ? (current - baselineXp) / elapsedDays : null;
 				const daysRemaining = remaining === 0 ? 0 : xpPerDay > 0 ? remaining / xpPerDay : null;
 				const completionAt = remaining === 0 || daysRemaining === null ? null : updatedAt + daysRemaining * 86400000;
-				return { name, progress: {
+				return { name, level, progress: {
 					current, target, remaining,
 					percent: Math.min(100, current / target * 100),
 					xpPerDay,
