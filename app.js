@@ -49,21 +49,21 @@ let vm = Vue.createApp({
 		skillGoals() {
 			const changes = this.profileChanges.filter(change => change.plugin == "xpTracker" && change.key == "state")
 				.sort((a, b) => new Date(b.at) - new Date(a.at));
-			const baseline = this.parseProfileJson(changes[changes.length - 1]?.before);
-			// Uploads can omit inactive skills; search each skill's latest known record.
-			const states = [this.xpTrackerState, ...changes.flatMap(change => [
-				this.parseProfileJson(change.after), this.parseProfileJson(change.before)
+			const states = [{ state: this.xpTrackerState, at: this.profileUpdatedAt }, ...changes.flatMap((change, index) => [
+				{ state: this.parseProfileJson(change.after), at: change.at },
+				{ state: this.parseProfileJson(change.before), at: changes[index + 1]?.at ?? this.profileBaselineAt }
 			])];
 			const updatedAt = new Date(this.profileUpdatedAt).getTime();
-			const elapsedDays = (updatedAt - new Date(this.profileBaselineAt).getTime()) / 86400000;
 			return ["Strength", "Prayer", "Attack"].map(name => {
 				const skill = name.toUpperCase();
-				const current = states.map(state => this.trackedXp(state?.skills?.[skill]))
+				const current = states.map(({ state }) => this.trackedXp(state?.skills?.[skill]))
 					.find(xp => xp !== null) ?? null;
 				if (current === null) return { name, progress: null };
 				const target = 13034431;
 				const remaining = Math.max(0, target - current);
-				const baselineXp = this.trackedXp(baseline?.skills?.[skill]);
+				const baseline = states.findLast(({ state }) => this.trackedXp(state?.skills?.[skill]) !== null);
+				const baselineXp = this.trackedXp(baseline?.state?.skills?.[skill]);
+				const elapsedDays = (updatedAt - new Date(baseline?.at).getTime()) / 86400000;
 				const xpPerDay = baselineXp !== null && Number.isFinite(elapsedDays) && elapsedDays > 0 && current >= baselineXp ? (current - baselineXp) / elapsedDays : null;
 				const daysRemaining = remaining === 0 ? 0 : xpPerDay > 0 ? remaining / xpPerDay : null;
 				const completionAt = remaining === 0 || daysRemaining === null ? null : updatedAt + daysRemaining * 86400000;
