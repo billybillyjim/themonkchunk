@@ -1,7 +1,7 @@
 {
   "profile": "OXNNqtET",
   "baselineAt": "2026-09-30T20:09:22.981778+00:00",
-  "updatedAt": "2026-10-12T03:55:20.034152+00:00",
+  "updatedAt": "2026-10-13T03:55:20.270321+00:00",
   "entries": [
     {
       "plugin": "loottracker",
@@ -31,7 +31,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Fortress Guard",
-      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":15661,\"first\":1713832999573,\"last\":1791768248223,\"drops\":[526,15661]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":15703,\"first\":1713832999573,\"last\":1791817450778,\"drops\":[526,15703]}"
     },
     {
       "plugin": "loottracker",
@@ -76,12 +76,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "attacksBlocked",
-      "value": "40094"
+      "value": "40185"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksMissed",
-      "value": "5216"
+      "value": "5252"
     },
     {
       "plugin": "ultimatestattracker",
@@ -101,7 +101,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "bonesBuried",
-      "value": "25491"
+      "value": "25533"
     },
     {
       "plugin": "ultimatestattracker",
@@ -121,12 +121,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "damageDone",
-      "value": "391916"
+      "value": "392760"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "damageReceived",
-      "value": "1838"
+      "value": "1874"
     },
     {
       "plugin": "ultimatestattracker",
@@ -141,7 +141,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "hpRegen",
-      "value": "1679"
+      "value": "1734"
     },
     {
       "plugin": "ultimatestattracker",
@@ -166,7 +166,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "tilesRan",
-      "value": "107024"
+      "value": "107128"
     },
     {
       "plugin": "ultimatestattracker",
@@ -191,7 +191,7 @@
     {
       "plugin": "xpTracker",
       "key": "state",
-      "value": "{\"skills\":{\"ATTACK\":{\"s\":461224,\"br\":0,\"ar\":28636,\"t\":10570853},\"HITPOINTS\":{\"s\":4517910,\"br\":0,\"ar\":9502,\"t\":10570853},\"PRAYER\":{\"s\":976141,\"br\":0,\"ar\":1575,\"t\":10552459},\"MAGIC\":{\"s\":15617,\"br\":0,\"ar\":31,\"t\":8670534},\"HUNTER\":{\"s\":178751,\"br\":0,\"ar\":22,\"t\":8668076}},\"compactViewSkills\":[],\"overall\":{\"s\":19342751,\"br\":0,\"ar\":39766,\"t\":10570853}}"
+      "value": "{\"skills\":{\"ATTACK\":{\"s\":489860,\"br\":0,\"ar\":3712,\"t\":5495476},\"HITPOINTS\":{\"s\":4527412,\"br\":0,\"ar\":1231,\"t\":5495476},\"PRAYER\":{\"s\":977716,\"br\":0,\"ar\":189,\"t\":4831257},\"HUNTER\":{\"s\":178773,\"br\":0,\"ar\":550,\"t\":1805016}},\"compactViewSkills\":[],\"overall\":{\"s\":19382517,\"br\":0,\"ar\":5682,\"t\":5495476}}"
     }
   ],
   "changes": [
@@ -1720,6 +1720,69 @@
       "key": "state",
       "before": "{\"skills\":{\"ATTACK\":{\"s\":441264,\"br\":0,\"ar\":19960,\"t\":14584912},\"HITPOINTS\":{\"s\":4510630,\"br\":0,\"ar\":7280,\"t\":14584912},\"PRAYER\":{\"s\":974593,\"br\":0,\"ar\":1548,\"t\":14521028},\"HUNTER\":{\"s\":178722,\"br\":0,\"ar\":29,\"t\":9807142},\"STRENGTH\":{\"s\":13034372,\"br\":0,\"ar\":1980,\"t\":837856}},\"compactViewSkills\":[],\"overall\":{\"s\":19311954,\"br\":0,\"ar\":30797,\"t\":14584912}}",
       "after": "{\"skills\":{\"ATTACK\":{\"s\":461224,\"br\":0,\"ar\":28636,\"t\":10570853},\"HITPOINTS\":{\"s\":4517910,\"br\":0,\"ar\":9502,\"t\":10570853},\"PRAYER\":{\"s\":976141,\"br\":0,\"ar\":1575,\"t\":10552459},\"MAGIC\":{\"s\":15617,\"br\":0,\"ar\":31,\"t\":8670534},\"HUNTER\":{\"s\":178751,\"br\":0,\"ar\":22,\"t\":8668076}},\"compactViewSkills\":[],\"overall\":{\"s\":19342751,\"br\":0,\"ar\":39766,\"t\":10570853}}"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Fortress Guard",
+      "before": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":15661,\"first\":1713832999573,\"last\":1791768248223,\"drops\":[526,15661]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":15703,\"first\":1713832999573,\"last\":1791817450778,\"drops\":[526,15703]}"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksBlocked",
+      "before": "40094",
+      "after": "40185"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksMissed",
+      "before": "5216",
+      "after": "5252"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "bonesBuried",
+      "before": "25491",
+      "after": "25533"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageDone",
+      "before": "391916",
+      "after": "392760"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageReceived",
+      "before": "1838",
+      "after": "1874"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hpRegen",
+      "before": "1679",
+      "after": "1734"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "tilesRan",
+      "before": "107024",
+      "after": "107128"
+    },
+    {
+      "at": "2026-10-13T03:55:20.270321+00:00",
+      "plugin": "xpTracker",
+      "key": "state",
+      "before": "{\"skills\":{\"ATTACK\":{\"s\":461224,\"br\":0,\"ar\":28636,\"t\":10570853},\"HITPOINTS\":{\"s\":4517910,\"br\":0,\"ar\":9502,\"t\":10570853},\"PRAYER\":{\"s\":976141,\"br\":0,\"ar\":1575,\"t\":10552459},\"MAGIC\":{\"s\":15617,\"br\":0,\"ar\":31,\"t\":8670534},\"HUNTER\":{\"s\":178751,\"br\":0,\"ar\":22,\"t\":8668076}},\"compactViewSkills\":[],\"overall\":{\"s\":19342751,\"br\":0,\"ar\":39766,\"t\":10570853}}",
+      "after": "{\"skills\":{\"ATTACK\":{\"s\":489860,\"br\":0,\"ar\":3712,\"t\":5495476},\"HITPOINTS\":{\"s\":4527412,\"br\":0,\"ar\":1231,\"t\":5495476},\"PRAYER\":{\"s\":977716,\"br\":0,\"ar\":189,\"t\":4831257},\"HUNTER\":{\"s\":178773,\"br\":0,\"ar\":550,\"t\":1805016}},\"compactViewSkills\":[],\"overall\":{\"s\":19382517,\"br\":0,\"ar\":5682,\"t\":5495476}}"
     }
   ]
 }
