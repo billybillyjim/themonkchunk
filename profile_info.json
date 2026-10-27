@@ -1,7 +1,7 @@
 {
   "profile": "OXNNqtET",
   "baselineAt": "2026-09-30T20:09:22.981778+00:00",
-  "updatedAt": "2026-10-23T03:55:20.241354+00:00",
+  "updatedAt": "2026-10-27T03:55:20.346467+00:00",
   "entries": [
     {
       "plugin": "loottracker",
@@ -31,7 +31,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Fortress Guard",
-      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":15866,\"first\":1713832999573,\"last\":1792701047082,\"drops\":[526,15866]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":15873,\"first\":1713832999573,\"last\":1793049690987,\"drops\":[526,15873]}"
     },
     {
       "plugin": "loottracker",
@@ -81,12 +81,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "attacksBlocked",
-      "value": "42392"
+      "value": "42404"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksMissed",
-      "value": "5623"
+      "value": "5630"
     },
     {
       "plugin": "ultimatestattracker",
@@ -106,7 +106,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "bonesBuried",
-      "value": "26955"
+      "value": "26961"
     },
     {
       "plugin": "ultimatestattracker",
@@ -126,12 +126,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "damageDone",
-      "value": "414733"
+      "value": "414887"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "damageReceived",
-      "value": "2099"
+      "value": "2106"
     },
     {
       "plugin": "ultimatestattracker",
@@ -146,7 +146,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "hpRegen",
-      "value": "1957"
+      "value": "1972"
     },
     {
       "plugin": "ultimatestattracker",
@@ -171,7 +171,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "tilesRan",
-      "value": "115055"
+      "value": "115070"
     },
     {
       "plugin": "ultimatestattracker",
@@ -196,7 +196,7 @@
     {
       "plugin": "xpTracker",
       "key": "state",
-      "value": "{\"skills\":{\"ATTACK\":{\"s\":558100,\"br\":0,\"ar\":29060,\"t\":23911244},\"HITPOINTS\":{\"s\":4550051,\"br\":0,\"ar\":9641,\"t\":23911244},\"PRAYER\":{\"s\":982419,\"br\":0,\"ar\":2005,\"t\":23900189},\"HUNTER\":{\"s\":179350,\"br\":0,\"ar\":1679,\"t\":22058287},\"MAGIC\":{\"s\":15648,\"br\":0,\"ar\":31,\"t\":12697906}},\"compactViewSkills\":[],\"overall\":{\"s\":19478676,\"br\":0,\"ar\":42416,\"t\":23911244}}"
+      "value": "{\"skills\":{\"ATTACK\":{\"s\":589376,\"br\":0,\"ar\":616,\"t\":5442557},\"HITPOINTS\":{\"s\":4560428,\"br\":0,\"ar\":204,\"t\":5442557},\"PRAYER\":{\"s\":984536,\"br\":0,\"ar\":28,\"t\":5425357}},\"compactViewSkills\":[],\"overall\":{\"s\":19521092,\"br\":0,\"ar\":3912,\"t\":5442557}}"
     }
   ],
   "changes": [
@@ -2285,6 +2285,69 @@
       "key": "state",
       "before": "{\"skills\":{\"ATTACK\":{\"s\":541672,\"br\":0,\"ar\":16428,\"t\":17381364},\"HITPOINTS\":{\"s\":4544601,\"br\":0,\"ar\":5450,\"t\":17381364},\"PRAYER\":{\"s\":981227,\"br\":0,\"ar\":1192,\"t\":17372830}},\"compactViewSkills\":[],\"overall\":{\"s\":19455606,\"br\":0,\"ar\":23070,\"t\":17381364}}",
       "after": "{\"skills\":{\"ATTACK\":{\"s\":558100,\"br\":0,\"ar\":29060,\"t\":23911244},\"HITPOINTS\":{\"s\":4550051,\"br\":0,\"ar\":9641,\"t\":23911244},\"PRAYER\":{\"s\":982419,\"br\":0,\"ar\":2005,\"t\":23900189},\"HUNTER\":{\"s\":179350,\"br\":0,\"ar\":1679,\"t\":22058287},\"MAGIC\":{\"s\":15648,\"br\":0,\"ar\":31,\"t\":12697906}},\"compactViewSkills\":[],\"overall\":{\"s\":19478676,\"br\":0,\"ar\":42416,\"t\":23911244}}"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Fortress Guard",
+      "before": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":15866,\"first\":1713832999573,\"last\":1792701047082,\"drops\":[526,15866]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":15873,\"first\":1713832999573,\"last\":1793049690987,\"drops\":[526,15873]}"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksBlocked",
+      "before": "42392",
+      "after": "42404"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksMissed",
+      "before": "5623",
+      "after": "5630"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "bonesBuried",
+      "before": "26955",
+      "after": "26961"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageDone",
+      "before": "414733",
+      "after": "414887"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageReceived",
+      "before": "2099",
+      "after": "2106"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hpRegen",
+      "before": "1957",
+      "after": "1972"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "tilesRan",
+      "before": "115055",
+      "after": "115070"
+    },
+    {
+      "at": "2026-10-27T03:55:20.346467+00:00",
+      "plugin": "xpTracker",
+      "key": "state",
+      "before": "{\"skills\":{\"ATTACK\":{\"s\":558100,\"br\":0,\"ar\":29060,\"t\":23911244},\"HITPOINTS\":{\"s\":4550051,\"br\":0,\"ar\":9641,\"t\":23911244},\"PRAYER\":{\"s\":982419,\"br\":0,\"ar\":2005,\"t\":23900189},\"HUNTER\":{\"s\":179350,\"br\":0,\"ar\":1679,\"t\":22058287},\"MAGIC\":{\"s\":15648,\"br\":0,\"ar\":31,\"t\":12697906}},\"compactViewSkills\":[],\"overall\":{\"s\":19478676,\"br\":0,\"ar\":42416,\"t\":23911244}}",
+      "after": "{\"skills\":{\"ATTACK\":{\"s\":589376,\"br\":0,\"ar\":616,\"t\":5442557},\"HITPOINTS\":{\"s\":4560428,\"br\":0,\"ar\":204,\"t\":5442557},\"PRAYER\":{\"s\":984536,\"br\":0,\"ar\":28,\"t\":5425357}},\"compactViewSkills\":[],\"overall\":{\"s\":19521092,\"br\":0,\"ar\":3912,\"t\":5442557}}"
     }
   ]
 }
