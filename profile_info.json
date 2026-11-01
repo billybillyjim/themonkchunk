@@ -1,7 +1,7 @@
 {
   "profile": "OXNNqtET",
   "baselineAt": "2026-09-30T20:09:22.981778+00:00",
-  "updatedAt": "2026-10-28T03:55:20.262130+00:00",
+  "updatedAt": "2026-11-01T03:55:20.385541+00:00",
   "entries": [
     {
       "plugin": "loottracker",
@@ -31,7 +31,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Fortress Guard",
-      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16059,\"first\":1713832999573,\"last\":1793116663762,\"drops\":[526,16059]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16149,\"first\":1713832999573,\"last\":1793460490230,\"drops\":[526,16149]}"
     },
     {
       "plugin": "loottracker",
@@ -66,7 +66,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Young impling",
-      "value": "{\"type\":\"NPC\",\"name\":\"Young impling\",\"kills\":58,\"first\":1747256929979,\"last\":1791746037482,\"drops\":[453,5,1353,11,361,10,7936,5,2293,8,7178,1,247,1,1539,25,1157,1,1901,4,2359,1,231,1,133,1,1777,2,23182,2,1523,2,2695,1]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Young impling\",\"kills\":59,\"first\":1747256929979,\"last\":1793457188363,\"drops\":[453,5,1353,11,361,10,7936,6,2293,8,7178,1,247,1,1539,25,1157,1,1901,4,2359,1,231,1,133,1,1777,2,23182,2,1523,2,2695,1]}"
     },
     {
       "plugin": "ultimatestattracker",
@@ -81,12 +81,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "attacksBlocked",
-      "value": "42788"
+      "value": "42970"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksMissed",
-      "value": "5772"
+      "value": "5832"
     },
     {
       "plugin": "ultimatestattracker",
@@ -106,7 +106,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "bonesBuried",
-      "value": "27142"
+      "value": "27230"
     },
     {
       "plugin": "ultimatestattracker",
@@ -126,12 +126,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "damageDone",
-      "value": "418686"
+      "value": "420476"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "damageReceived",
-      "value": "2202"
+      "value": "2247"
     },
     {
       "plugin": "ultimatestattracker",
@@ -146,17 +146,17 @@
     {
       "plugin": "ultimatestattracker",
       "key": "hpRegen",
-      "value": "2062"
+      "value": "2140"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "implingsCaught",
-      "value": "121"
+      "value": "122"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "itemsDropped",
-      "value": "194"
+      "value": "195"
     },
     {
       "plugin": "ultimatestattracker",
@@ -171,7 +171,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "tilesRan",
-      "value": "115547"
+      "value": "115850"
     },
     {
       "plugin": "ultimatestattracker",
@@ -196,7 +196,7 @@
     {
       "plugin": "xpTracker",
       "key": "state",
-      "value": "{\"skills\":{\"ATTACK\":{\"s\":589992,\"br\":0,\"ar\":16420,\"t\":10941592},\"HITPOINTS\":{\"s\":4560632,\"br\":0,\"ar\":5451,\"t\":10941592},\"PRAYER\":{\"s\":984564,\"br\":0,\"ar\":814,\"t\":10929298}},\"compactViewSkills\":[],\"overall\":{\"s\":19525004,\"br\":0,\"ar\":22685,\"t\":10941592}}"
+      "value": "{\"skills\":{\"ATTACK\":{\"s\":626052,\"br\":0,\"ar\":7940,\"t\":6520617},\"HITPOINTS\":{\"s\":4572600,\"br\":0,\"ar\":2634,\"t\":6520617},\"PRAYER\":{\"s\":986377,\"br\":0,\"ar\":396,\"t\":6513285},\"HUNTER\":{\"s\":181051,\"br\":0,\"ar\":572,\"t\":5084780}},\"compactViewSkills\":[],\"overall\":{\"s\":19574867,\"br\":0,\"ar\":11542,\"t\":6520617}}"
     }
   ],
   "changes": [
@@ -2425,6 +2425,90 @@
       "key": "state",
       "before": "{\"skills\":{\"ATTACK\":{\"s\":589376,\"br\":0,\"ar\":616,\"t\":5442557},\"HITPOINTS\":{\"s\":4560428,\"br\":0,\"ar\":204,\"t\":5442557},\"PRAYER\":{\"s\":984536,\"br\":0,\"ar\":28,\"t\":5425357}},\"compactViewSkills\":[],\"overall\":{\"s\":19521092,\"br\":0,\"ar\":3912,\"t\":5442557}}",
       "after": "{\"skills\":{\"ATTACK\":{\"s\":589992,\"br\":0,\"ar\":16420,\"t\":10941592},\"HITPOINTS\":{\"s\":4560632,\"br\":0,\"ar\":5451,\"t\":10941592},\"PRAYER\":{\"s\":984564,\"br\":0,\"ar\":814,\"t\":10929298}},\"compactViewSkills\":[],\"overall\":{\"s\":19525004,\"br\":0,\"ar\":22685,\"t\":10941592}}"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Fortress Guard",
+      "before": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16059,\"first\":1713832999573,\"last\":1793116663762,\"drops\":[526,16059]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16149,\"first\":1713832999573,\"last\":1793460490230,\"drops\":[526,16149]}"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Young impling",
+      "before": "{\"type\":\"NPC\",\"name\":\"Young impling\",\"kills\":58,\"first\":1747256929979,\"last\":1791746037482,\"drops\":[453,5,1353,11,361,10,7936,5,2293,8,7178,1,247,1,1539,25,1157,1,1901,4,2359,1,231,1,133,1,1777,2,23182,2,1523,2,2695,1]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Young impling\",\"kills\":59,\"first\":1747256929979,\"last\":1793457188363,\"drops\":[453,5,1353,11,361,10,7936,6,2293,8,7178,1,247,1,1539,25,1157,1,1901,4,2359,1,231,1,133,1,1777,2,23182,2,1523,2,2695,1]}"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksBlocked",
+      "before": "42788",
+      "after": "42970"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksMissed",
+      "before": "5772",
+      "after": "5832"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "bonesBuried",
+      "before": "27142",
+      "after": "27230"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageDone",
+      "before": "418686",
+      "after": "420476"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageReceived",
+      "before": "2202",
+      "after": "2247"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hpRegen",
+      "before": "2062",
+      "after": "2140"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "implingsCaught",
+      "before": "121",
+      "after": "122"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "itemsDropped",
+      "before": "194",
+      "after": "195"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "tilesRan",
+      "before": "115547",
+      "after": "115850"
+    },
+    {
+      "at": "2026-11-01T03:55:20.385541+00:00",
+      "plugin": "xpTracker",
+      "key": "state",
+      "before": "{\"skills\":{\"ATTACK\":{\"s\":589992,\"br\":0,\"ar\":16420,\"t\":10941592},\"HITPOINTS\":{\"s\":4560632,\"br\":0,\"ar\":5451,\"t\":10941592},\"PRAYER\":{\"s\":984564,\"br\":0,\"ar\":814,\"t\":10929298}},\"compactViewSkills\":[],\"overall\":{\"s\":19525004,\"br\":0,\"ar\":22685,\"t\":10941592}}",
+      "after": "{\"skills\":{\"ATTACK\":{\"s\":626052,\"br\":0,\"ar\":7940,\"t\":6520617},\"HITPOINTS\":{\"s\":4572600,\"br\":0,\"ar\":2634,\"t\":6520617},\"PRAYER\":{\"s\":986377,\"br\":0,\"ar\":396,\"t\":6513285},\"HUNTER\":{\"s\":181051,\"br\":0,\"ar\":572,\"t\":5084780}},\"compactViewSkills\":[],\"overall\":{\"s\":19574867,\"br\":0,\"ar\":11542,\"t\":6520617}}"
     }
   ]
 }
