@@ -1,7 +1,7 @@
 {
   "profile": "OXNNqtET",
   "baselineAt": "2026-09-30T20:09:22.981778+00:00",
-  "updatedAt": "2026-11-01T03:55:20.385541+00:00",
+  "updatedAt": "2026-11-02T04:55:20.337858+00:00",
   "entries": [
     {
       "plugin": "loottracker",
@@ -21,7 +21,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Earth impling",
-      "value": "{\"type\":\"NPC\",\"name\":\"Earth impling\",\"kills\":35,\"first\":1760803100598,\"last\":1791902956121,\"drops\":[1442,4,444,3,447,6,5311,4,237,5,1440,3,1784,24,557,64,5535,1,6035,2,6033,12]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Earth impling\",\"kills\":36,\"first\":1760803100598,\"last\":1793560994850,\"drops\":[1442,4,444,3,447,6,5311,4,237,5,1440,3,1784,24,557,64,5535,1,6035,2,6033,18]}"
     },
     {
       "plugin": "loottracker",
@@ -31,7 +31,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Fortress Guard",
-      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16149,\"first\":1713832999573,\"last\":1793460490230,\"drops\":[526,16149]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16212,\"first\":1713832999573,\"last\":1793561895325,\"drops\":[526,16212]}"
     },
     {
       "plugin": "loottracker",
@@ -81,12 +81,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "attacksBlocked",
-      "value": "42970"
+      "value": "43094"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksMissed",
-      "value": "5832"
+      "value": "5866"
     },
     {
       "plugin": "ultimatestattracker",
@@ -106,7 +106,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "bonesBuried",
-      "value": "27230"
+      "value": "27292"
     },
     {
       "plugin": "ultimatestattracker",
@@ -126,12 +126,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "damageDone",
-      "value": "420476"
+      "value": "421760"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "damageReceived",
-      "value": "2247"
+      "value": "2279"
     },
     {
       "plugin": "ultimatestattracker",
@@ -146,17 +146,17 @@
     {
       "plugin": "ultimatestattracker",
       "key": "hpRegen",
-      "value": "2140"
+      "value": "2172"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "implingsCaught",
-      "value": "122"
+      "value": "123"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "itemsDropped",
-      "value": "195"
+      "value": "196"
     },
     {
       "plugin": "ultimatestattracker",
@@ -171,7 +171,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "tilesRan",
-      "value": "115850"
+      "value": "116010"
     },
     {
       "plugin": "ultimatestattracker",
@@ -196,7 +196,7 @@
     {
       "plugin": "xpTracker",
       "key": "state",
-      "value": "{\"skills\":{\"ATTACK\":{\"s\":626052,\"br\":0,\"ar\":7940,\"t\":6520617},\"HITPOINTS\":{\"s\":4572600,\"br\":0,\"ar\":2634,\"t\":6520617},\"PRAYER\":{\"s\":986377,\"br\":0,\"ar\":396,\"t\":6513285},\"HUNTER\":{\"s\":181051,\"br\":0,\"ar\":572,\"t\":5084780}},\"compactViewSkills\":[],\"overall\":{\"s\":19574867,\"br\":0,\"ar\":11542,\"t\":6520617}}"
+      "value": "{\"skills\":{\"ATTACK\":{\"s\":633992,\"br\":0,\"ar\":5580,\"t\":3245995},\"HITPOINTS\":{\"s\":4575234,\"br\":0,\"ar\":1851,\"t\":3245995},\"PRAYER\":{\"s\":986773,\"br\":0,\"ar\":279,\"t\":3228819},\"HUNTER\":{\"s\":181623,\"br\":0,\"ar\":577,\"t\":3202980}},\"compactViewSkills\":[],\"overall\":{\"s\":19586409,\"br\":0,\"ar\":8287,\"t\":3245995}}"
     }
   ],
   "changes": [
@@ -2509,6 +2509,90 @@
       "key": "state",
       "before": "{\"skills\":{\"ATTACK\":{\"s\":589992,\"br\":0,\"ar\":16420,\"t\":10941592},\"HITPOINTS\":{\"s\":4560632,\"br\":0,\"ar\":5451,\"t\":10941592},\"PRAYER\":{\"s\":984564,\"br\":0,\"ar\":814,\"t\":10929298}},\"compactViewSkills\":[],\"overall\":{\"s\":19525004,\"br\":0,\"ar\":22685,\"t\":10941592}}",
       "after": "{\"skills\":{\"ATTACK\":{\"s\":626052,\"br\":0,\"ar\":7940,\"t\":6520617},\"HITPOINTS\":{\"s\":4572600,\"br\":0,\"ar\":2634,\"t\":6520617},\"PRAYER\":{\"s\":986377,\"br\":0,\"ar\":396,\"t\":6513285},\"HUNTER\":{\"s\":181051,\"br\":0,\"ar\":572,\"t\":5084780}},\"compactViewSkills\":[],\"overall\":{\"s\":19574867,\"br\":0,\"ar\":11542,\"t\":6520617}}"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Earth impling",
+      "before": "{\"type\":\"NPC\",\"name\":\"Earth impling\",\"kills\":35,\"first\":1760803100598,\"last\":1791902956121,\"drops\":[1442,4,444,3,447,6,5311,4,237,5,1440,3,1784,24,557,64,5535,1,6035,2,6033,12]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Earth impling\",\"kills\":36,\"first\":1760803100598,\"last\":1793560994850,\"drops\":[1442,4,444,3,447,6,5311,4,237,5,1440,3,1784,24,557,64,5535,1,6035,2,6033,18]}"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Fortress Guard",
+      "before": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16149,\"first\":1713832999573,\"last\":1793460490230,\"drops\":[526,16149]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16212,\"first\":1713832999573,\"last\":1793561895325,\"drops\":[526,16212]}"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksBlocked",
+      "before": "42970",
+      "after": "43094"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksMissed",
+      "before": "5832",
+      "after": "5866"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "bonesBuried",
+      "before": "27230",
+      "after": "27292"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageDone",
+      "before": "420476",
+      "after": "421760"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageReceived",
+      "before": "2247",
+      "after": "2279"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hpRegen",
+      "before": "2140",
+      "after": "2172"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "implingsCaught",
+      "before": "122",
+      "after": "123"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "itemsDropped",
+      "before": "195",
+      "after": "196"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "tilesRan",
+      "before": "115850",
+      "after": "116010"
+    },
+    {
+      "at": "2026-11-02T04:55:20.337858+00:00",
+      "plugin": "xpTracker",
+      "key": "state",
+      "before": "{\"skills\":{\"ATTACK\":{\"s\":626052,\"br\":0,\"ar\":7940,\"t\":6520617},\"HITPOINTS\":{\"s\":4572600,\"br\":0,\"ar\":2634,\"t\":6520617},\"PRAYER\":{\"s\":986377,\"br\":0,\"ar\":396,\"t\":6513285},\"HUNTER\":{\"s\":181051,\"br\":0,\"ar\":572,\"t\":5084780}},\"compactViewSkills\":[],\"overall\":{\"s\":19574867,\"br\":0,\"ar\":11542,\"t\":6520617}}",
+      "after": "{\"skills\":{\"ATTACK\":{\"s\":633992,\"br\":0,\"ar\":5580,\"t\":3245995},\"HITPOINTS\":{\"s\":4575234,\"br\":0,\"ar\":1851,\"t\":3245995},\"PRAYER\":{\"s\":986773,\"br\":0,\"ar\":279,\"t\":3228819},\"HUNTER\":{\"s\":181623,\"br\":0,\"ar\":577,\"t\":3202980}},\"compactViewSkills\":[],\"overall\":{\"s\":19586409,\"br\":0,\"ar\":8287,\"t\":3245995}}"
     }
   ]
 }
