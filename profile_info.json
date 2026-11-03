@@ -1,7 +1,7 @@
 {
   "profile": "OXNNqtET",
   "baselineAt": "2026-09-30T20:09:22.981778+00:00",
-  "updatedAt": "2026-11-02T04:55:20.337858+00:00",
+  "updatedAt": "2026-11-03T04:55:20.343789+00:00",
   "entries": [
     {
       "plugin": "loottracker",
@@ -31,7 +31,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Fortress Guard",
-      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16212,\"first\":1713832999573,\"last\":1793561895325,\"drops\":[526,16212]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16235,\"first\":1713832999573,\"last\":1793638402686,\"drops\":[526,16235]}"
     },
     {
       "plugin": "loottracker",
@@ -46,7 +46,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Imp",
-      "value": "{\"type\":\"NPC\",\"name\":\"Imp\",\"kills\":1945,\"first\":1710372627372,\"last\":1792693539072,\"drops\":[25766,1945,1949,32,1944,79,579,130,1472,77,1474,81,590,77,1759,114,753,55,1925,63,592,89,2146,54,2142,12,1965,30,1476,81,2307,26,1735,61,2138,66,1470,82,2311,63,2347,139,1933,21,1448,108,1929,27,434,59,1935,26,1931,26,877,129,1947,55,13453,68,1937,23,195,20,956,25,2309,15]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Imp\",\"kills\":1946,\"first\":1710372627372,\"last\":1793635100985,\"drops\":[25766,1946,1949,32,1944,79,579,130,1472,77,1474,81,590,78,1759,114,753,55,1925,63,592,89,2146,54,2142,12,1965,30,1476,81,2307,26,1735,61,2138,66,1470,82,2311,63,2347,139,1933,21,1448,108,1929,27,434,59,1935,26,1931,26,877,129,1947,55,13453,68,1937,23,195,20,956,25,2309,15]}"
     },
     {
       "plugin": "loottracker",
@@ -76,17 +76,17 @@
     {
       "plugin": "ultimatestattracker",
       "key": "ashesScattered",
-      "value": "403"
+      "value": "404"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksBlocked",
-      "value": "43094"
+      "value": "43139"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksMissed",
-      "value": "5866"
+      "value": "5877"
     },
     {
       "plugin": "ultimatestattracker",
@@ -106,7 +106,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "bonesBuried",
-      "value": "27292"
+      "value": "27313"
     },
     {
       "plugin": "ultimatestattracker",
@@ -126,12 +126,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "damageDone",
-      "value": "421760"
+      "value": "422193"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "damageReceived",
-      "value": "2279"
+      "value": "2297"
     },
     {
       "plugin": "ultimatestattracker",
@@ -141,12 +141,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "foodEaten",
-      "value": "58"
+      "value": "59"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "hpRegen",
-      "value": "2172"
+      "value": "2189"
     },
     {
       "plugin": "ultimatestattracker",
@@ -171,7 +171,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "tilesRan",
-      "value": "116010"
+      "value": "116096"
     },
     {
       "plugin": "ultimatestattracker",
@@ -196,7 +196,7 @@
     {
       "plugin": "xpTracker",
       "key": "state",
-      "value": "{\"skills\":{\"ATTACK\":{\"s\":633992,\"br\":0,\"ar\":5580,\"t\":3245995},\"HITPOINTS\":{\"s\":4575234,\"br\":0,\"ar\":1851,\"t\":3245995},\"PRAYER\":{\"s\":986773,\"br\":0,\"ar\":279,\"t\":3228819},\"HUNTER\":{\"s\":181623,\"br\":0,\"ar\":577,\"t\":3202980}},\"compactViewSkills\":[],\"overall\":{\"s\":19586409,\"br\":0,\"ar\":8287,\"t\":3245995}}"
+      "value": "{\"skills\":{\"PRAYER\":{\"s\":987052,\"br\":0,\"ar\":105,\"t\":5833037},\"ATTACK\":{\"s\":639572,\"br\":0,\"ar\":2064,\"t\":5831813},\"HITPOINTS\":{\"s\":4577085,\"br\":0,\"ar\":684,\"t\":5831813}},\"compactViewSkills\":[],\"overall\":{\"s\":19594696,\"br\":0,\"ar\":2853,\"t\":5833037}}"
     }
   ],
   "changes": [
@@ -2593,6 +2593,90 @@
       "key": "state",
       "before": "{\"skills\":{\"ATTACK\":{\"s\":626052,\"br\":0,\"ar\":7940,\"t\":6520617},\"HITPOINTS\":{\"s\":4572600,\"br\":0,\"ar\":2634,\"t\":6520617},\"PRAYER\":{\"s\":986377,\"br\":0,\"ar\":396,\"t\":6513285},\"HUNTER\":{\"s\":181051,\"br\":0,\"ar\":572,\"t\":5084780}},\"compactViewSkills\":[],\"overall\":{\"s\":19574867,\"br\":0,\"ar\":11542,\"t\":6520617}}",
       "after": "{\"skills\":{\"ATTACK\":{\"s\":633992,\"br\":0,\"ar\":5580,\"t\":3245995},\"HITPOINTS\":{\"s\":4575234,\"br\":0,\"ar\":1851,\"t\":3245995},\"PRAYER\":{\"s\":986773,\"br\":0,\"ar\":279,\"t\":3228819},\"HUNTER\":{\"s\":181623,\"br\":0,\"ar\":577,\"t\":3202980}},\"compactViewSkills\":[],\"overall\":{\"s\":19586409,\"br\":0,\"ar\":8287,\"t\":3245995}}"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Fortress Guard",
+      "before": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16212,\"first\":1713832999573,\"last\":1793561895325,\"drops\":[526,16212]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Fortress Guard\",\"kills\":16235,\"first\":1713832999573,\"last\":1793638402686,\"drops\":[526,16235]}"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Imp",
+      "before": "{\"type\":\"NPC\",\"name\":\"Imp\",\"kills\":1945,\"first\":1710372627372,\"last\":1792693539072,\"drops\":[25766,1945,1949,32,1944,79,579,130,1472,77,1474,81,590,77,1759,114,753,55,1925,63,592,89,2146,54,2142,12,1965,30,1476,81,2307,26,1735,61,2138,66,1470,82,2311,63,2347,139,1933,21,1448,108,1929,27,434,59,1935,26,1931,26,877,129,1947,55,13453,68,1937,23,195,20,956,25,2309,15]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Imp\",\"kills\":1946,\"first\":1710372627372,\"last\":1793635100985,\"drops\":[25766,1946,1949,32,1944,79,579,130,1472,77,1474,81,590,78,1759,114,753,55,1925,63,592,89,2146,54,2142,12,1965,30,1476,81,2307,26,1735,61,2138,66,1470,82,2311,63,2347,139,1933,21,1448,108,1929,27,434,59,1935,26,1931,26,877,129,1947,55,13453,68,1937,23,195,20,956,25,2309,15]}"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "ashesScattered",
+      "before": "403",
+      "after": "404"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksBlocked",
+      "before": "43094",
+      "after": "43139"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksMissed",
+      "before": "5866",
+      "after": "5877"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "bonesBuried",
+      "before": "27292",
+      "after": "27313"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageDone",
+      "before": "421760",
+      "after": "422193"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageReceived",
+      "before": "2279",
+      "after": "2297"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "foodEaten",
+      "before": "58",
+      "after": "59"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hpRegen",
+      "before": "2172",
+      "after": "2189"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "tilesRan",
+      "before": "116010",
+      "after": "116096"
+    },
+    {
+      "at": "2026-11-03T04:55:20.343789+00:00",
+      "plugin": "xpTracker",
+      "key": "state",
+      "before": "{\"skills\":{\"ATTACK\":{\"s\":633992,\"br\":0,\"ar\":5580,\"t\":3245995},\"HITPOINTS\":{\"s\":4575234,\"br\":0,\"ar\":1851,\"t\":3245995},\"PRAYER\":{\"s\":986773,\"br\":0,\"ar\":279,\"t\":3228819},\"HUNTER\":{\"s\":181623,\"br\":0,\"ar\":577,\"t\":3202980}},\"compactViewSkills\":[],\"overall\":{\"s\":19586409,\"br\":0,\"ar\":8287,\"t\":3245995}}",
+      "after": "{\"skills\":{\"PRAYER\":{\"s\":987052,\"br\":0,\"ar\":105,\"t\":5833037},\"ATTACK\":{\"s\":639572,\"br\":0,\"ar\":2064,\"t\":5831813},\"HITPOINTS\":{\"s\":4577085,\"br\":0,\"ar\":684,\"t\":5831813}},\"compactViewSkills\":[],\"overall\":{\"s\":19594696,\"br\":0,\"ar\":2853,\"t\":5833037}}"
     }
   ]
 }
