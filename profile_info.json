@@ -1,7 +1,7 @@
 {
   "profile": "OXNNqtET",
   "baselineAt": "2026-09-30T20:09:22.981778+00:00",
-  "updatedAt": "2026-11-18T04:55:20.755225+00:00",
+  "updatedAt": "2026-11-19T04:55:20.826485+00:00",
   "entries": [
     {
       "plugin": "loottracker",
@@ -16,7 +16,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Dwarf",
-      "value": "{\"type\":\"NPC\",\"name\":\"Dwarf\",\"kills\":16335,\"first\":1710287111135,\"last\":1794938450365,\"drops\":[526,16335,440,546,438,409,1265,1661,2349,899,995,36050,1139,510,2347,1236,2351,404,562,960,1363,129,877,5324,23182,174,561,974,436,378,453,233,1375,277,1619,9,1621,13,1623,28,1617,2,1462,5,987,2]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Dwarf\",\"kills\":16362,\"first\":1710287111135,\"last\":1795033515608,\"drops\":[526,16362,440,549,438,409,1265,1663,2349,900,995,36118,1139,513,2347,1238,2351,405,562,960,1363,131,877,5334,23182,175,561,974,436,379,453,233,1375,277,1619,9,1621,13,1623,28,1617,2,1462,5,987,2]}"
     },
     {
       "plugin": "loottracker",
@@ -81,12 +81,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "attacksBlocked",
-      "value": "44947"
+      "value": "44988"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksMissed",
-      "value": "6267"
+      "value": "6272"
     },
     {
       "plugin": "ultimatestattracker",
@@ -106,7 +106,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "bonesBuried",
-      "value": "28422"
+      "value": "28450"
     },
     {
       "plugin": "ultimatestattracker",
@@ -126,12 +126,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "damageDone",
-      "value": "439648"
+      "value": "439995"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "damageReceived",
-      "value": "2586"
+      "value": "2596"
     },
     {
       "plugin": "ultimatestattracker",
@@ -146,17 +146,17 @@
     {
       "plugin": "ultimatestattracker",
       "key": "hpRegen",
-      "value": "2466"
+      "value": "2476"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "hunterLampsUsed",
-      "value": "2"
+      "value": "3"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "hunterLampXp",
-      "value": "1100"
+      "value": "1650"
     },
     {
       "plugin": "ultimatestattracker",
@@ -176,12 +176,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "lampsUsed",
-      "value": "2"
+      "value": "3"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "lampXp",
-      "value": "1100"
+      "value": "1650"
     },
     {
       "plugin": "ultimatestattracker",
@@ -191,7 +191,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "tilesRan",
-      "value": "122803"
+      "value": "123026"
     },
     {
       "plugin": "ultimatestattracker",
@@ -201,7 +201,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "totalTeleports",
-      "value": "117"
+      "value": "118"
     },
     {
       "plugin": "ultimatestattracker",
@@ -216,7 +216,7 @@
     {
       "plugin": "xpTracker",
       "key": "state",
-      "value": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":164,\"t\":7572785},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":55,\"t\":7572785},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":5,\"t\":1377604}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":27616,\"t\":7572785}}"
+      "value": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":1608,\"t\":13960085},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":533,\"t\":13960085},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":131,\"t\":7764904},\"HUNTER\":{\"s\":183377,\"br\":0,\"ar\":550,\"t\":3291702}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":30214,\"t\":13960085}}"
     }
   ],
   "changes": [
@@ -3257,6 +3257,104 @@
       "key": "state",
       "before": "{\"skills\":{\"ATTACK\":{\"s\":724688,\"br\":0,\"ar\":92,\"t\":6256463},\"HITPOINTS\":{\"s\":4605330,\"br\":0,\"ar\":31,\"t\":6256463},\"PRAYER\":{\"s\":992890,\"br\":0,\"ar\":5,\"t\":61282}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":9404,\"t\":6256463}}",
       "after": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":164,\"t\":7572785},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":55,\"t\":7572785},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":5,\"t\":1377604}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":27616,\"t\":7572785}}"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Dwarf",
+      "before": "{\"type\":\"NPC\",\"name\":\"Dwarf\",\"kills\":16335,\"first\":1710287111135,\"last\":1794938450365,\"drops\":[526,16335,440,546,438,409,1265,1661,2349,899,995,36050,1139,510,2347,1236,2351,404,562,960,1363,129,877,5324,23182,174,561,974,436,378,453,233,1375,277,1619,9,1621,13,1623,28,1617,2,1462,5,987,2]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Dwarf\",\"kills\":16362,\"first\":1710287111135,\"last\":1795033515608,\"drops\":[526,16362,440,549,438,409,1265,1663,2349,900,995,36118,1139,513,2347,1238,2351,405,562,960,1363,131,877,5334,23182,175,561,974,436,379,453,233,1375,277,1619,9,1621,13,1623,28,1617,2,1462,5,987,2]}"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksBlocked",
+      "before": "44947",
+      "after": "44988"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksMissed",
+      "before": "6267",
+      "after": "6272"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "bonesBuried",
+      "before": "28422",
+      "after": "28450"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageDone",
+      "before": "439648",
+      "after": "439995"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageReceived",
+      "before": "2586",
+      "after": "2596"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hpRegen",
+      "before": "2466",
+      "after": "2476"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hunterLampsUsed",
+      "before": "2",
+      "after": "3"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hunterLampXp",
+      "before": "1100",
+      "after": "1650"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "lampsUsed",
+      "before": "2",
+      "after": "3"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "lampXp",
+      "before": "1100",
+      "after": "1650"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "tilesRan",
+      "before": "122803",
+      "after": "123026"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "totalTeleports",
+      "before": "117",
+      "after": "118"
+    },
+    {
+      "at": "2026-11-19T04:55:20.826485+00:00",
+      "plugin": "xpTracker",
+      "key": "state",
+      "before": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":164,\"t\":7572785},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":55,\"t\":7572785},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":5,\"t\":1377604}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":27616,\"t\":7572785}}",
+      "after": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":1608,\"t\":13960085},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":533,\"t\":13960085},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":131,\"t\":7764904},\"HUNTER\":{\"s\":183377,\"br\":0,\"ar\":550,\"t\":3291702}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":30214,\"t\":13960085}}"
     }
   ]
 }
