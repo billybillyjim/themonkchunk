@@ -1,7 +1,7 @@
 {
   "profile": "OXNNqtET",
   "baselineAt": "2026-09-30T20:09:22.981778+00:00",
-  "updatedAt": "2026-11-19T04:55:20.826485+00:00",
+  "updatedAt": "2026-11-20T04:55:20.630130+00:00",
   "entries": [
     {
       "plugin": "loottracker",
@@ -16,7 +16,7 @@
     {
       "plugin": "loottracker",
       "key": "drops_NPC_Dwarf",
-      "value": "{\"type\":\"NPC\",\"name\":\"Dwarf\",\"kills\":16362,\"first\":1710287111135,\"last\":1795033515608,\"drops\":[526,16362,440,549,438,409,1265,1663,2349,900,995,36118,1139,513,2347,1238,2351,405,562,960,1363,131,877,5334,23182,175,561,974,436,379,453,233,1375,277,1619,9,1621,13,1623,28,1617,2,1462,5,987,2]}"
+      "value": "{\"type\":\"NPC\",\"name\":\"Dwarf\",\"kills\":16376,\"first\":1710287111135,\"last\":1795090218358,\"drops\":[526,16376,440,550,438,410,1265,1663,2349,900,995,36166,1139,513,2347,1238,2351,405,562,962,1363,131,877,5334,23182,175,561,974,436,379,453,235,1375,278,1619,9,1621,13,1623,28,1617,2,1462,5,987,2]}"
     },
     {
       "plugin": "loottracker",
@@ -81,12 +81,12 @@
     {
       "plugin": "ultimatestattracker",
       "key": "attacksBlocked",
-      "value": "44988"
+      "value": "45011"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "attacksMissed",
-      "value": "6272"
+      "value": "6275"
     },
     {
       "plugin": "ultimatestattracker",
@@ -106,7 +106,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "bonesBuried",
-      "value": "28450"
+      "value": "28464"
     },
     {
       "plugin": "ultimatestattracker",
@@ -126,12 +126,17 @@
     {
       "plugin": "ultimatestattracker",
       "key": "damageDone",
-      "value": "439995"
+      "value": "440186"
     },
     {
       "plugin": "ultimatestattracker",
       "key": "damageReceived",
-      "value": "2596"
+      "value": "2599"
+    },
+    {
+      "plugin": "ultimatestattracker",
+      "key": "doorsOpened",
+      "value": "1"
     },
     {
       "plugin": "ultimatestattracker",
@@ -146,7 +151,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "hpRegen",
-      "value": "2476"
+      "value": "2479"
     },
     {
       "plugin": "ultimatestattracker",
@@ -191,7 +196,7 @@
     {
       "plugin": "ultimatestattracker",
       "key": "tilesRan",
-      "value": "123026"
+      "value": "123103"
     },
     {
       "plugin": "ultimatestattracker",
@@ -216,7 +221,7 @@
     {
       "plugin": "xpTracker",
       "key": "state",
-      "value": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":1608,\"t\":13960085},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":533,\"t\":13960085},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":131,\"t\":7764904},\"HUNTER\":{\"s\":183377,\"br\":0,\"ar\":550,\"t\":3291702}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":30214,\"t\":13960085}}"
+      "value": "{\"skills\":{\"PRAYER\":{\"s\":994083,\"br\":0,\"ar\":63,\"t\":3798052},\"ATTACK\":{\"s\":739132,\"br\":0,\"ar\":716,\"t\":3796836},\"HITPOINTS\":{\"s\":4610121,\"br\":0,\"ar\":238,\"t\":3796836},\"HUNTER\":{\"s\":183927,\"br\":0,\"ar\":825,\"t\":2644684}},\"compactViewSkills\":[],\"overall\":{\"s\":19736050,\"br\":0,\"ar\":1842,\"t\":3798052}}"
     }
   ],
   "changes": [
@@ -3355,6 +3360,76 @@
       "key": "state",
       "before": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":164,\"t\":7572785},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":55,\"t\":7572785},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":5,\"t\":1377604}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":27616,\"t\":7572785}}",
       "after": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":1608,\"t\":13960085},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":533,\"t\":13960085},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":131,\"t\":7764904},\"HUNTER\":{\"s\":183377,\"br\":0,\"ar\":550,\"t\":3291702}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":30214,\"t\":13960085}}"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "loottracker",
+      "key": "drops_NPC_Dwarf",
+      "before": "{\"type\":\"NPC\",\"name\":\"Dwarf\",\"kills\":16362,\"first\":1710287111135,\"last\":1795033515608,\"drops\":[526,16362,440,549,438,409,1265,1663,2349,900,995,36118,1139,513,2347,1238,2351,405,562,960,1363,131,877,5334,23182,175,561,974,436,379,453,233,1375,277,1619,9,1621,13,1623,28,1617,2,1462,5,987,2]}",
+      "after": "{\"type\":\"NPC\",\"name\":\"Dwarf\",\"kills\":16376,\"first\":1710287111135,\"last\":1795090218358,\"drops\":[526,16376,440,550,438,410,1265,1663,2349,900,995,36166,1139,513,2347,1238,2351,405,562,962,1363,131,877,5334,23182,175,561,974,436,379,453,235,1375,278,1619,9,1621,13,1623,28,1617,2,1462,5,987,2]}"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksBlocked",
+      "before": "44988",
+      "after": "45011"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "attacksMissed",
+      "before": "6272",
+      "after": "6275"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "bonesBuried",
+      "before": "28450",
+      "after": "28464"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageDone",
+      "before": "439995",
+      "after": "440186"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "damageReceived",
+      "before": "2596",
+      "after": "2599"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "doorsOpened",
+      "before": null,
+      "after": "1"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "hpRegen",
+      "before": "2476",
+      "after": "2479"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "ultimatestattracker",
+      "key": "tilesRan",
+      "before": "123026",
+      "after": "123103"
+    },
+    {
+      "at": "2026-11-20T04:55:20.630130+00:00",
+      "plugin": "xpTracker",
+      "key": "state",
+      "before": "{\"skills\":{\"ATTACK\":{\"s\":737476,\"br\":0,\"ar\":1608,\"t\":13960085},\"HITPOINTS\":{\"s\":4609572,\"br\":0,\"ar\":533,\"t\":13960085},\"PRAYER\":{\"s\":993952,\"br\":0,\"ar\":131,\"t\":7764904},\"HUNTER\":{\"s\":183377,\"br\":0,\"ar\":550,\"t\":3291702}},\"compactViewSkills\":[],\"overall\":{\"s\":19705772,\"br\":0,\"ar\":30214,\"t\":13960085}}",
+      "after": "{\"skills\":{\"PRAYER\":{\"s\":994083,\"br\":0,\"ar\":63,\"t\":3798052},\"ATTACK\":{\"s\":739132,\"br\":0,\"ar\":716,\"t\":3796836},\"HITPOINTS\":{\"s\":4610121,\"br\":0,\"ar\":238,\"t\":3796836},\"HUNTER\":{\"s\":183927,\"br\":0,\"ar\":825,\"t\":2644684}},\"compactViewSkills\":[],\"overall\":{\"s\":19736050,\"br\":0,\"ar\":1842,\"t\":3798052}}"
     }
   ]
 }
